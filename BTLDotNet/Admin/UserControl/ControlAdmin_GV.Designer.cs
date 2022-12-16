@@ -367,6 +367,7 @@
             this.Controls.Add(this.listView1);
             this.Name = "ControlAdmin_GV";
             this.Size = new System.Drawing.Size(1602, 854);
+            this.Load += new System.EventHandler(this.ControlAdmin_GV_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
