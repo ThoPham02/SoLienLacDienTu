@@ -60,23 +60,29 @@ namespace BTLDotNet.Teacher
 
         private void search_btn_Click(object sender, EventArgs e)
         {
-            if (!(search_txt.Text == "" || semesterSearch_txt.Text == "" || yearSearch_txt.Text == ""))
+            if (!(search_txt.Text == "" || semesterSearch_cbox.SelectedIndex == -1 || yearSearch_cbox.SelectedIndex == -1))
             {
                 try
                 {
-                    HocSinh modelHS = new HocSinh();
-                    BaoCao modelBC = new BaoCao();
-                    NamHoc modelNH = new NamHoc();
-                    HocKi modelHK = new HocKi();
-                    Model.EF.hoc_sinh hs = modelHS.GetStudentByID(search_txt.Text);
-                    Model.EF.bao_cao bc = modelBC.GetReportByStudentAndYear
-                        (search_txt.Text,
-                        Convert.ToInt32(semesterSearch_txt.Text),
-                        Convert.ToInt32(yearSearch_txt.Text)
-                        );
+                    //Tạo mới các controller cần thiết
+                    HocSinh ctrlHS = new HocSinh();
+                    BaoCao ctrlBC = new BaoCao();
+                    NamHoc ctrlNH = new NamHoc();
+                    HocKi ctrlHKi = new HocKi();
+                    HanhKiem ctrlHKiem = new HanhKiem();
 
+                    //Lấy ra học sinh
+                    Model.EF.hoc_sinh hs = ctrlHS.GetStudentByID(search_txt.Text);
 
-                    if (hs != null)
+                    //Tiền xử lý dữ liệu đầu vào controller
+                    int maNamHoc = yearSearch_cbox.SelectedIndex + 1;
+                    int maHocKi = semesterSearch_cbox.SelectedIndex + 1;
+
+                    //Lấy ra báo cáo
+                    var bc = ctrlBC.GetReportByStudentAndYear(search_txt.Text, maHocKi, maNamHoc);
+
+                    //Check và hiển thị dữ liệu
+                    if (hs != null && bc != null)
                     {
                         DateTime birth = Convert.ToDateTime(hs.ngaySinh);
 
@@ -92,42 +98,58 @@ namespace BTLDotNet.Teacher
                         {
                             sex_txt.Text = "Nữ";
                         }
+                        if (!(bc.nhan_xet == "")) { comment_rtxt.Text = bc.nhan_xet; }
+                        else { comment_rtxt.Text = "Chưa có nhận xét."; }
 
-                        year_txt.Text = modelNH.GetYearName((int)bc.ma_nam);
-                        semester_txt.Text = modelHK.GetSemesterName((int)bc.ma_hoc_ki);
-
+                        hanhKiem_txt.Text = ctrlHKiem.GetConductName((int)bc.ma_hanh_kiem);
+                        year_txt.Text = ctrlNH.GetYearName(maNamHoc);
+                        semester_txt.Text = ctrlHKi.GetSemesterName(maHocKi);
                     }
-
+                    return;
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Tìm kiếm không hợp lệ!");
-                    search_txt.Focus();
+                    id_txt.Text = name_txt.Text = birth_txt.Text = sex_txt.Text = "";
+                    MessageBox.Show("Tìm kiếm không hợp lệ hoặc không có dữ liệu tồn tại!");
                 }
 
             }
             else
             {
                 MessageBox.Show("Ô tìm kiếm trống!  Vui lòng nhập đủ thông tin");
-                search_txt.Focus();
             }
-
-
         }
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-            BaoCao bc = new BaoCao();
+            BaoCao ctrlBC = new BaoCao();
             if (id_txt.Text == "") { MessageBox.Show("Chưa tìm kiếm học sinh!"); }
-            bool check = bc.CreateReport(
-                    id_txt.Text,
-                    hanhKiem_cbox.Text,
-                    comment_txt.Text,
-                    semesterSearch_txt.Text,
-                    yearSearch_txt.Text
-                );
-            if (check == true) { MessageBox.Show("Thêm báo cáo thành công!"); }
-            else { MessageBox.Show("Lỗi! Kiểm tra lại thông tin"); }
+            try
+            {
+                bool check = ctrlBC.CreateReport(
+                   id_txt.Text,
+                   hanhKiem_cbox.Text,
+                   comment_rtxt.Text,
+                   semesterSearch_cbox.SelectedItem.ToString(),
+                   yearSearch_cbox.SelectedItem.ToString()
+               );
+                if (check == true) { MessageBox.Show("Thêm báo cáo thành công!"); }
+                else { MessageBox.Show("Lỗi! Kiểm tra lại thông tin."); }
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi! Vui lòng thử lại.");
+            }
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void edit_btn_Click(object sender, EventArgs e)
+        {
+            BaoCao ctrlBC = new BaoCao();
         }
     }
 }
