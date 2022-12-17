@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
+            this.colMaHocSinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colpass = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colTen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colngaysinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colGioiTinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colKhoa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colSĐT = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colTrangThai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,14 +55,6 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.colMaHocSinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colTen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colpass = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colGioiTinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colKhoa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSĐT = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colngaysinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colTrangThai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -86,6 +86,59 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // colMaHocSinh
+            // 
+            this.colMaHocSinh.Text = "Mã học sinh";
+            this.colMaHocSinh.Width = 120;
+            // 
+            // colpass
+            // 
+            this.colpass.DisplayIndex = 2;
+            this.colpass.Text = "Mật khẩu ";
+            this.colpass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colpass.Width = 120;
+            // 
+            // colTen
+            // 
+            this.colTen.DisplayIndex = 1;
+            this.colTen.Text = "Tên";
+            this.colTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colTen.Width = 120;
+            // 
+            // colngaysinh
+            // 
+            this.colngaysinh.DisplayIndex = 6;
+            this.colngaysinh.Text = "Ngày Sinh";
+            this.colngaysinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colngaysinh.Width = 120;
+            // 
+            // colGioiTinh
+            // 
+            this.colGioiTinh.DisplayIndex = 3;
+            this.colGioiTinh.Text = "Giới tính";
+            this.colGioiTinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colGioiTinh.Width = 120;
+            // 
+            // colKhoa
+            // 
+            this.colKhoa.DisplayIndex = 4;
+            this.colKhoa.Text = "Khóa";
+            this.colKhoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colKhoa.Width = 120;
+            // 
+            // colSĐT
+            // 
+            this.colSĐT.DisplayIndex = 5;
+            this.colSĐT.Text = "SĐT";
+            this.colSĐT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colSĐT.Width = 120;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.Text = "Trạng thái";
+            this.colTrangThai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colTrangThai.Width = 120;
             // 
             // label1
             // 
@@ -252,59 +305,6 @@
             this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // colMaHocSinh
-            // 
-            this.colMaHocSinh.Text = "Mã học sinh";
-            this.colMaHocSinh.Width = 120;
-            // 
-            // colTen
-            // 
-            this.colTen.DisplayIndex = 1;
-            this.colTen.Text = "Tên";
-            this.colTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colTen.Width = 120;
-            // 
-            // colpass
-            // 
-            this.colpass.DisplayIndex = 2;
-            this.colpass.Text = "Mật khẩu ";
-            this.colpass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colpass.Width = 120;
-            // 
-            // colGioiTinh
-            // 
-            this.colGioiTinh.DisplayIndex = 3;
-            this.colGioiTinh.Text = "Giới tính";
-            this.colGioiTinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colGioiTinh.Width = 120;
-            // 
-            // colKhoa
-            // 
-            this.colKhoa.DisplayIndex = 4;
-            this.colKhoa.Text = "Khóa";
-            this.colKhoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colKhoa.Width = 120;
-            // 
-            // colSĐT
-            // 
-            this.colSĐT.DisplayIndex = 5;
-            this.colSĐT.Text = "SĐT";
-            this.colSĐT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colSĐT.Width = 120;
-            // 
-            // colngaysinh
-            // 
-            this.colngaysinh.DisplayIndex = 6;
-            this.colngaysinh.Text = "Ngày Sinh";
-            this.colngaysinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colngaysinh.Width = 120;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.Text = "Trạng thái";
-            this.colTrangThai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colTrangThai.Width = 120;
-            // 
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -368,7 +368,7 @@
             // button10
             // 
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(1522, 95);
+            this.button10.Location = new System.Drawing.Point(1529, 94);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(75, 32);
             this.button10.TabIndex = 32;

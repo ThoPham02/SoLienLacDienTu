@@ -30,7 +30,7 @@
         {
             this.listView1 = new System.Windows.Forms.ListView();
             this.colMaMon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colTen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colTenMon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -47,7 +47,7 @@
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colMaMon,
-            this.colTen});
+            this.colTenMon});
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(18, 12);
             this.listView1.Margin = new System.Windows.Forms.Padding(48, 24, 48, 24);
@@ -56,17 +56,18 @@
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // colMaMon
             // 
             this.colMaMon.Text = "Mã Môn";
             this.colMaMon.Width = 120;
             // 
-            // colTen
+            // colTenMon
             // 
-            this.colTen.Text = "Tên";
-            this.colTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colTen.Width = 120;
+            this.colTenMon.Text = "Tên Môn";
+            this.colTenMon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colTenMon.Width = 120;
             // 
             // button3
             // 
@@ -112,9 +113,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(1045, 86);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 25);
+            this.label2.Size = new System.Drawing.Size(98, 25);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Tên";
+            this.label2.Text = "Tên Môn";
             // 
             // textBox2
             // 
@@ -133,6 +134,7 @@
             this.button10.TabIndex = 25;
             this.button10.Text = "Làm mới";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button4
             // 
@@ -143,6 +145,7 @@
             this.button4.TabIndex = 24;
             this.button4.Text = "Cập nhật Thông tin";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button2
             // 
@@ -190,7 +193,7 @@
 
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader colMaMon;
-        private System.Windows.Forms.ColumnHeader colTen;
+        private System.Windows.Forms.ColumnHeader colTenMon;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;

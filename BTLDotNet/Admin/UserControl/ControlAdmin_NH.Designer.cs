@@ -50,6 +50,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(288, 30);
             this.textBox1.TabIndex = 12;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -74,6 +75,7 @@
             this.listView1.TabIndex = 13;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // colMaNamHoc
             // 
@@ -124,6 +126,7 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button10
             // 
@@ -134,6 +137,7 @@
             this.button10.TabIndex = 25;
             this.button10.Text = "Làm mới";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button4
             // 
@@ -144,6 +148,7 @@
             this.button4.TabIndex = 24;
             this.button4.Text = "Cập nhật Thông tin";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button2
             // 
