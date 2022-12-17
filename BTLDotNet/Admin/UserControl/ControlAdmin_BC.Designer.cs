@@ -61,6 +61,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
@@ -77,7 +78,7 @@
             this.listView1.Location = new System.Drawing.Point(48, 24);
             this.listView1.Margin = new System.Windows.Forms.Padding(48, 24, 48, 24);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(950, 600);
+            this.listView1.Size = new System.Drawing.Size(950, 810);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -247,9 +248,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(585, 732);
+            this.button1.Location = new System.Drawing.Point(1229, 493);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 60);
+            this.button1.Size = new System.Drawing.Size(160, 60);
             this.button1.TabIndex = 15;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
@@ -258,9 +259,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(818, 732);
+            this.button2.Location = new System.Drawing.Point(1424, 493);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(180, 60);
+            this.button2.Size = new System.Drawing.Size(160, 60);
             this.button2.TabIndex = 16;
             this.button2.Text = "Xóa";
             this.button2.UseVisualStyleBackColor = true;
@@ -280,7 +281,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(1509, 92);
+            this.button5.Location = new System.Drawing.Point(1509, 87);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 30);
             this.button5.TabIndex = 19;
@@ -346,9 +347,9 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(1031, 472);
+            this.button3.Location = new System.Drawing.Point(1031, 493);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(220, 60);
+            this.button3.Size = new System.Drawing.Size(160, 60);
             this.button3.TabIndex = 17;
             this.button3.Text = "Làm mới";
             this.button3.UseVisualStyleBackColor = true;
@@ -357,18 +358,29 @@
             // button11
             // 
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(1346, 472);
+            this.button11.Location = new System.Drawing.Point(1337, 603);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(220, 60);
             this.button11.TabIndex = 25;
-            this.button11.Text = "Cập nhật thông tin";
+            this.button11.Text = "Tìm kiếm";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button12
+            // 
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.Location = new System.Drawing.Point(1059, 603);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(220, 60);
+            this.button12.TabIndex = 26;
+            this.button12.Text = "Cập nhật thông tin";
+            this.button12.UseVisualStyleBackColor = true;
             // 
             // ControlAdmin_BC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
@@ -438,5 +450,6 @@
         private System.Windows.Forms.ColumnHeader colNX;
         private System.Windows.Forms.ColumnHeader colMaHKi;
         private System.Windows.Forms.ColumnHeader colMaN;
+        private System.Windows.Forms.Button button12;
     }
 }

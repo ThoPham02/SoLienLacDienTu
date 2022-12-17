@@ -44,12 +44,12 @@
             this.label1.Text = "Trang Quản Lý Sổ Liên Lạc Điện Tử _ Nhóm01";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // AdminHeaderControl
+            // ControlAdmin_Header
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
-            this.Name = "AdminHeaderControl";
+            this.Name = "ControlAdmin_Header";
             this.Size = new System.Drawing.Size(1905, 150);
             this.ResumeLayout(false);
             this.PerformLayout();
