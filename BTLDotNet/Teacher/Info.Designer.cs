@@ -32,8 +32,6 @@ namespace BTLDotNet.Teacher
             this.id_label = new System.Windows.Forms.Label();
             this.id_txt = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.refresh_btn = new System.Windows.Forms.Button();
             this.updatePhone_btn = new System.Windows.Forms.Button();
             this.updateSex_btn = new System.Windows.Forms.Button();
@@ -48,16 +46,18 @@ namespace BTLDotNet.Teacher
             this.birth_label = new System.Windows.Forms.Label();
             this.name_txt = new System.Windows.Forms.TextBox();
             this.name_label = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.changePass_btn = new System.Windows.Forms.Button();
             this.oldPass_txt = new System.Windows.Forms.TextBox();
             this.newPass_txt = new System.Windows.Forms.TextBox();
             this.confirmPass_txt = new System.Windows.Forms.TextBox();
-            this.changePass_btn = new System.Windows.Forms.Button();
-            this.showPass_rbtn = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.showPass_chkbox = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -104,32 +104,6 @@ namespace BTLDotNet.Teacher
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(512, 243);
             this.panel1.TabIndex = 2;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.showPass_rbtn);
-            this.panel3.Controls.Add(this.changePass_btn);
-            this.panel3.Controls.Add(this.oldPass_txt);
-            this.panel3.Controls.Add(this.newPass_txt);
-            this.panel3.Controls.Add(this.confirmPass_txt);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(12, 355);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(512, 253);
-            this.panel3.TabIndex = 15;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 17);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Đổi mật khẩu:";
             // 
             // refresh_btn
             // 
@@ -282,54 +256,35 @@ namespace BTLDotNet.Teacher
             this.name_label.TabIndex = 2;
             this.name_label.Text = "Tên:";
             // 
-            // panel2
+            // panel3
             // 
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(12, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(512, 100);
-            this.panel2.TabIndex = 2;
+            this.panel3.Controls.Add(this.showPass_chkbox);
+            this.panel3.Controls.Add(this.changePass_btn);
+            this.panel3.Controls.Add(this.oldPass_txt);
+            this.panel3.Controls.Add(this.newPass_txt);
+            this.panel3.Controls.Add(this.confirmPass_txt);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Location = new System.Drawing.Point(12, 355);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(512, 253);
+            this.panel3.TabIndex = 15;
             // 
-            // label6
+            // changePass_btn
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(117, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(261, 31);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Thông tin giáo viên";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(43, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 17);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Mật khẩu cũ:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(43, 80);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 17);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Mật khẩu mới:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(43, 122);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 17);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Nhập lại mật khẩu:";
+            this.changePass_btn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.changePass_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.changePass_btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.changePass_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changePass_btn.Location = new System.Drawing.Point(303, 195);
+            this.changePass_btn.Name = "changePass_btn";
+            this.changePass_btn.Size = new System.Drawing.Size(121, 55);
+            this.changePass_btn.TabIndex = 19;
+            this.changePass_btn.Text = "Đổi mật khẩu";
+            this.changePass_btn.UseVisualStyleBackColor = false;
+            this.changePass_btn.Click += new System.EventHandler(this.changePass_btn_Click);
             // 
             // oldPass_txt
             // 
@@ -358,32 +313,76 @@ namespace BTLDotNet.Teacher
             this.confirmPass_txt.TabIndex = 18;
             this.confirmPass_txt.UseSystemPasswordChar = true;
             // 
-            // changePass_btn
+            // label4
             // 
-            this.changePass_btn.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.changePass_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.changePass_btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.changePass_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changePass_btn.Location = new System.Drawing.Point(303, 195);
-            this.changePass_btn.Name = "changePass_btn";
-            this.changePass_btn.Size = new System.Drawing.Size(121, 55);
-            this.changePass_btn.TabIndex = 19;
-            this.changePass_btn.Text = "Đổi mật khẩu";
-            this.changePass_btn.UseVisualStyleBackColor = false;
-            this.changePass_btn.Click += new System.EventHandler(this.changePass_btn_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(43, 122);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(144, 17);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Nhập lại mật khẩu:";
             // 
-            // showPass_rbtn
+            // label3
             // 
-            this.showPass_rbtn.AutoSize = true;
-            this.showPass_rbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showPass_rbtn.Location = new System.Drawing.Point(244, 148);
-            this.showPass_rbtn.Name = "showPass_rbtn";
-            this.showPass_rbtn.Size = new System.Drawing.Size(130, 24);
-            this.showPass_rbtn.TabIndex = 20;
-            this.showPass_rbtn.TabStop = true;
-            this.showPass_rbtn.Text = "Hiện mật khẩu";
-            this.showPass_rbtn.UseVisualStyleBackColor = true;
-            this.showPass_rbtn.CheckedChanged += new System.EventHandler(this.showPass_rbtn_CheckedChanged);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(43, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 17);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Mật khẩu mới:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(43, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 17);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Mật khẩu cũ:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 17);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Đổi mật khẩu:";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Location = new System.Drawing.Point(12, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(512, 100);
+            this.panel2.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(117, 29);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(261, 31);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Thông tin giáo viên";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // showPass_chkbox
+            // 
+            this.showPass_chkbox.AutoSize = true;
+            this.showPass_chkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showPass_chkbox.Location = new System.Drawing.Point(239, 148);
+            this.showPass_chkbox.Name = "showPass_chkbox";
+            this.showPass_chkbox.Size = new System.Drawing.Size(128, 20);
+            this.showPass_chkbox.TabIndex = 21;
+            this.showPass_chkbox.Text = "Hiển thị mật khẩu";
+            this.showPass_chkbox.UseVisualStyleBackColor = true;
+            this.showPass_chkbox.CheckedChanged += new System.EventHandler(this.showPass_chkbox_CheckedChanged);
             // 
             // Info
             // 
@@ -438,7 +437,7 @@ namespace BTLDotNet.Teacher
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton showPass_rbtn;
         private System.Windows.Forms.Button changePass_btn;
+        private System.Windows.Forms.CheckBox showPass_chkbox;
     }
 }
