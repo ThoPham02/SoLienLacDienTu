@@ -64,7 +64,7 @@ namespace BTLDotNet
             textBox8.ReadOnly = true;
 
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void button12_Click(object sender, EventArgs e)
         {
             string mahs = textBox1.Text;
             string pass = textBox2.Text;
@@ -128,6 +128,5 @@ namespace BTLDotNet
         {
             LoadData();
         }
-
     }
 }

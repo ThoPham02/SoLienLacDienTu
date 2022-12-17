@@ -14,15 +14,36 @@ namespace BTLDotNet
     {
         Controller.MonHoc mh = new Controller.MonHoc();
         Controller.DiemKT diem = new Controller.DiemKT();
+        Controller.HocKi hocKi = new Controller.HocKi();
+        Controller.NamHoc namHoc = new Controller.NamHoc();
         string user = Controller.Const.userID;
         public ControlHS_KQHT()
         {
             InitializeComponent();
+            loadComboBox();
             loadData();
+        }
+
+        public void loadComboBox()
+        {
+            var years = namHoc.GetYearList();
+            foreach (var year in years)
+            {
+                comboBox2.Items.Add(year.nam_hoc1);
+            }
+            comboBox2.SelectedIndex = years.Count - 1;
+
+            var semesters = hocKi.GetSemesterList();
+            foreach (var semester in semesters)
+            {
+                comboBox1.Items.Add(semester.hoc_ki1);
+            }
+            comboBox1.SelectedIndex = semesters.Count - 1;
         }
 
         public void loadData()
         {
+            // Load score 
             var subjects = mh.GetSubjectsList();
             foreach (var subject in subjects)
             {
@@ -57,6 +78,8 @@ namespace BTLDotNet
                 }
                 listView1.Items.Add(item);
             }
+
+            //Load report
         }
 
         private void ControlHS_KQHT_Load(object sender, EventArgs e)
@@ -72,6 +95,21 @@ namespace BTLDotNet
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox_namhoc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_namhoc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            loadData();
         }
     }
 }

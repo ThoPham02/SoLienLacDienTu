@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure.Design;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
@@ -54,6 +55,17 @@ namespace Controller
             {
                 return false;
             }
+        }
+
+        public Model.EF.bao_cao GetReportByStudentAndYear(string maHs, int maHocKi, int maNam)
+        {
+            return 
+                dbContext.bao_cao.
+                Where(baocao => 
+                    baocao.ma_hs == maHs 
+                    && baocao.ma_hoc_ki == maHocKi 
+                    && baocao.ma_nam == maNam).
+                ToList()[0];
         }
     }
 }
