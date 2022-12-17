@@ -146,5 +146,10 @@ namespace BTLDotNet
         {
             textBox6.ReadOnly = false;
         }
+
+        private void ControlAdmin_GV_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="BaoCao.cs" />
     <Compile Include="Const.cs" />
+    <Compile Include="DiemKT.cs" />
     <Compile Include="GiaoVien.cs" />
     <Compile Include="HanhKiem.cs" />
     <Compile Include="HocKi.cs" />
