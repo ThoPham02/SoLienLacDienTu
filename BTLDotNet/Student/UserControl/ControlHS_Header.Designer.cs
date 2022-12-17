@@ -39,9 +39,9 @@
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(707, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(554, 52);
+            this.label1.Size = new System.Drawing.Size(896, 52);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Quản Lý Học Sinh_Nhóm01";
+            this.label1.Text = "Trang Học Sinh Sổ Liên Lạc Điện Tử_Nhóm01";
             // 
             // ControlHS_Header
             // 
