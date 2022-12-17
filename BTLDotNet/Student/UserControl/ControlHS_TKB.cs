@@ -51,7 +51,6 @@ namespace BTLDotNet
         {
             int maHocKi = comboBox1.SelectedIndex + 1;
             int maNamHoc = comboBox2.SelectedIndex + 1;
-            MessageBox.Show(maHocKi.ToString());
             int maLop = lop.GetClassByStudent(user).ma_lop;
             var schedules = tkb.GetScheduleByCondition(maLop, maHocKi, maNamHoc);
             if (schedules.Count == 0)
