@@ -180,6 +180,7 @@
             this.button7.TabIndex = 11;
             this.button7.Text = "Cập nhật thông tin";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // ControlAdmin_HocKi
             // 

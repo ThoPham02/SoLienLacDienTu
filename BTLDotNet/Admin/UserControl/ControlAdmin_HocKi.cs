@@ -89,5 +89,11 @@ namespace BTLDotNet
         {
 
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string mahk = textBox1.Text;
+            string hk = textBox2.Text;
+        }
     }
 }
