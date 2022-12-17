@@ -73,5 +73,21 @@ namespace BTLDotNet
         {
             textBox2.ReadOnly = false;
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string mahk = textBox1.Text;
+            string loai= textBox2.Text;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

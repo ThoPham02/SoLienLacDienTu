@@ -65,13 +65,7 @@ namespace BTLDotNet
 
         private void button11_Click(object sender, EventArgs e)
         {
-            string id = textBox1.Text;
-            string mahs = textBox2.Text;
-            string mahk = textBox3.Text;
-            string diemtk = textBox4.Text;
-            string nx = textBox5.Text;
-            string mahki = textBox6.Text;
-            string manam = textBox7.Text;
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -141,6 +135,17 @@ namespace BTLDotNet
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            string id = textBox1.Text;
+            string mahs = textBox2.Text;
+            string mahk = textBox3.Text;
+            string diemtk = textBox4.Text;
+            string nx = textBox5.Text;
+            string mahki = textBox6.Text;
+            string manam = textBox7.Text;
         }
     }
 }

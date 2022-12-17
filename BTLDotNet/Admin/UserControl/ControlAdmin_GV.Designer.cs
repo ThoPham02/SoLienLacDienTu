@@ -169,6 +169,7 @@
             this.button3.TabIndex = 5;
             this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox2
             // 
@@ -347,6 +348,7 @@
             this.button11.TabIndex = 24;
             this.button11.Text = "Tìm kiếm";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // ControlAdmin_GV
             // 
