@@ -28,7 +28,7 @@ namespace BTLDotNet
             {
                 ListViewItem item = new ListViewItem();
                 item.Text = year.ma_nam.ToString();
-                item.SubItems.Add(year.nam_hoc1);
+                item.SubItems.Add(year.ten_nam_hoc);
                 listView1.Items.Add(item);
             };
 

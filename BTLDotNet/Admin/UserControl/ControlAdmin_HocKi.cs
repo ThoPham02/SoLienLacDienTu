@@ -29,7 +29,7 @@ namespace BTLDotNet
             {
                 ListViewItem item = new ListViewItem();
                 item.Text = semester.ma_hoc_ki.ToString();
-                item.SubItems.Add(semester.hoc_ki1);
+                item.SubItems.Add(semester.ten_hoc_ki);
                 listView1.Items.Add(item);
             };
             listView1.FullRowSelect = true;

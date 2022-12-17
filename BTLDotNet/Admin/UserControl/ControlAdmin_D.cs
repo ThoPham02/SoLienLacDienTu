@@ -25,17 +25,17 @@ namespace BTLDotNet
         {
             listView1.Items.Clear();
             clearTextBox();
-            var points = d.GetPointList();
+            var points = d.GetScoreList();
             foreach (var point in points)
             {
                 ListViewItem item = new ListViewItem();
                 item.Text = point.ma_hs.ToString();
                 item.SubItems.Add(point.ma_hs);
-                item.SubItems.Add(point.diem);
-                item.SubItems.Add(point.loai);
-                item.SubItems.Add(point.ma_mon);
-                item.SubItems.Add(point.ma_hoc_ki);
-                item.SubItems.Add(point.ma_nam);
+                item.SubItems.Add(point.diem.ToString());
+                item.SubItems.Add(point.loai.ToString());
+                item.SubItems.Add(point.ma_mon.ToString());
+                item.SubItems.Add(point.ma_hoc_ki.ToString());
+                item.SubItems.Add(point.ma_nam.ToString());
                 listView1.Items.Add(item);
             };
             listView1.FullRowSelect = true;
