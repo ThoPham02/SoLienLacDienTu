@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
+            this.colMaHK = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colLoai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,8 +41,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.colMaHK = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colLoai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView1
@@ -56,6 +56,16 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // colMaHK
+            // 
+            this.colMaHK.Text = "Mã hạnh kiểm";
+            this.colMaHK.Width = 200;
+            // 
+            // colLoai
+            // 
+            this.colLoai.Text = "Loại";
+            this.colLoai.Width = 200;
             // 
             // button1
             // 
@@ -140,7 +150,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(220, 60);
             this.button5.TabIndex = 9;
-            this.button5.Text = "Thay đổi";
+            this.button5.Text = "Làm mới";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button6
@@ -152,16 +162,6 @@
             this.button6.TabIndex = 10;
             this.button6.Text = "Cập nhật thông tin";
             this.button6.UseVisualStyleBackColor = true;
-            // 
-            // colMaHK
-            // 
-            this.colMaHK.Text = "Mã hạnh kiểm";
-            this.colMaHK.Width = 200;
-            // 
-            // colLoai
-            // 
-            this.colLoai.Text = "Loại";
-            this.colLoai.Width = 200;
             // 
             // ControlAdmin_HK
             // 

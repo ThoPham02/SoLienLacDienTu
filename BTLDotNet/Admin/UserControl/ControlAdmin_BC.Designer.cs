@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
+            this.colID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colMaHS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colMaHK = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colDiemTK = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colNX = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colMaHKi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colMaN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -54,13 +61,6 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
-            this.colID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMaHS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMaHK = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colDiemTK = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colNX = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMaHKi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMaN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView1
@@ -81,6 +81,41 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // colID
+            // 
+            this.colID.Text = "ID";
+            this.colID.Width = 120;
+            // 
+            // colMaHS
+            // 
+            this.colMaHS.Text = "Mã học sinh";
+            this.colMaHS.Width = 120;
+            // 
+            // colMaHK
+            // 
+            this.colMaHK.Text = "Mã hạnh kiểm";
+            this.colMaHK.Width = 120;
+            // 
+            // colDiemTK
+            // 
+            this.colDiemTK.Text = "Điểm tổng kết";
+            this.colDiemTK.Width = 120;
+            // 
+            // colNX
+            // 
+            this.colNX.Text = "Nhận xét";
+            this.colNX.Width = 120;
+            // 
+            // colMaHKi
+            // 
+            this.colMaHKi.Text = "Mã học kì";
+            this.colMaHKi.Width = 120;
+            // 
+            // colMaN
+            // 
+            this.colMaN.Text = "Mã năm";
+            this.colMaN.Width = 120;
             // 
             // label1
             // 
@@ -305,7 +340,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(220, 60);
             this.button3.TabIndex = 17;
-            this.button3.Text = "Thay đổi";
+            this.button3.Text = "Làm mới";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button11
@@ -317,41 +352,6 @@
             this.button11.TabIndex = 25;
             this.button11.Text = "Cập nhật thông tin";
             this.button11.UseVisualStyleBackColor = true;
-            // 
-            // colID
-            // 
-            this.colID.Text = "ID";
-            this.colID.Width = 120;
-            // 
-            // colMaHS
-            // 
-            this.colMaHS.Text = "Mã học sinh";
-            this.colMaHS.Width = 120;
-            // 
-            // colMaHK
-            // 
-            this.colMaHK.Text = "Mã hạnh kiểm";
-            this.colMaHK.Width = 120;
-            // 
-            // colDiemTK
-            // 
-            this.colDiemTK.Text = "Điểm tổng kết";
-            this.colDiemTK.Width = 120;
-            // 
-            // colNX
-            // 
-            this.colNX.Text = "Nhận xét";
-            this.colNX.Width = 120;
-            // 
-            // colMaHKi
-            // 
-            this.colMaHKi.Text = "Mã học kì";
-            this.colMaHKi.Width = 120;
-            // 
-            // colMaN
-            // 
-            this.colMaN.Text = "Mã năm";
-            this.colMaN.Width = 120;
             // 
             // ControlAdmin_BC
             // 
