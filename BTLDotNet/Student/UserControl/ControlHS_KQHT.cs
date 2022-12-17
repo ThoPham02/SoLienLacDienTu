@@ -41,7 +41,7 @@ namespace BTLDotNet
             {
                 comboBox1.Items.Add(semester.ten_hoc_ki);
             }
-            comboBox1.SelectedIndex = semesters.Count - 1;
+            comboBox1.SelectedIndex = 0;
         }
 
         public void loadData()
@@ -95,7 +95,6 @@ namespace BTLDotNet
             else
             {
                 textBox1.Text = hanhKiem.GetConductName((int)report.ma_hanh_kiem);
-
             }
             richTextBox1.ReadOnly = true;
             textBox1.ReadOnly = true;

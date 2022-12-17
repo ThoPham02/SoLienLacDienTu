@@ -14,6 +14,18 @@ namespace Controller
         {
             return dbContext.lop_hoc.ToList();
         }
+        public Model.EF.lop_hoc GetClassByStudent(string maHocSinh)
+        {
+            try
+            {
+                var classDetail = dbContext.chi_tiet_lop_hoc.Single(db => db.ma_hs.Equals(maHocSinh));
+
+                return dbContext.lop_hoc.Single(db => db.ma_lop == classDetail.ma_lop);
+            } catch
+            {
+                return null;
+            }
+        }
         public bool CreateClass(Model.EF.lop_hoc clas)
         {
             try

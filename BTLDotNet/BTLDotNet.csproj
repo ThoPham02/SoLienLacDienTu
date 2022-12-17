@@ -130,6 +130,12 @@
     <Compile Include="Admin\UserControl\ControlAdmin_NH.Designer.cs">
       <DependentUpon>ControlAdmin_NH.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student\UserControl\ControlHS_TKB_MH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Student\UserControl\ControlHS_TKB_MH.Designer.cs">
+      <DependentUpon>ControlHS_TKB_MH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student\UserControl\ControlHS_Header.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\UserControl\ControlAdmin_TKB.resx">
       <DependentUpon>ControlAdmin_TKB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\UserControl\ControlHS_TKB_MH.resx">
+      <DependentUpon>ControlHS_TKB_MH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student\UserControl\ControlHS_KQHT.resx">
       <DependentUpon>ControlHS_KQHT.cs</DependentUpon>

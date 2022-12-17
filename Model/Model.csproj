@@ -53,6 +53,9 @@
     <Compile Include="EF\bao_cao.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="EF\chi_tiet_lop_hoc.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
     <Compile Include="EF\Data.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

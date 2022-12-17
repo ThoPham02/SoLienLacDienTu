@@ -4,33 +4,35 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0a7bff8274e4490fbb870bb3001cbd8d" Name="Diagram1">
+      <Diagram DiagramId="431320b20bf84948b1e8ea2c70920619" Name="Diagram1">
         <EntityTypeShape EntityType="SoLienLacDienTuModel.bao_cao" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SoLienLacDienTuModel.chi_tiet_lop_hoc" Width="1.5" PointX="3" PointY="17.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SoLienLacDienTuModel.diem_kt" Width="1.5" PointX="6" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SoLienLacDienTuModel.giao_vien" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SoLienLacDienTuModel.hanh_kiem" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SoLienLacDienTuModel.hoc_ki" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="SoLienLacDienTuModel.hoc_sinh" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SoLienLacDienTuModel.lop_hoc" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SoLienLacDienTuModel.mon_hoc" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SoLienLacDienTuModel.nam_hoc" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SoLienLacDienTuModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SoLienLacDienTuModel.thoi_khoa_bieu" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
-        <AssociationConnector Association="SoLienLacDienTuModel.FK__bao_cao__ma_hanh__6383C8BA" ManuallyRouted="false" />
-        <AssociationConnector Association="SoLienLacDienTuModel.FK__bao_cao__ma_hoc___6477ECF3" ManuallyRouted="false" />
-        <AssociationConnector Association="SoLienLacDienTuModel.FK__bao_cao__ma_hs__628FA481" ManuallyRouted="false" />
-        <AssociationConnector Association="SoLienLacDienTuModel.FK__bao_cao__ma_nam__656C112C" ManuallyRouted="false" />
-        <AssociationConnector Association="SoLienLacDienTuModel.FK__diem_kt__ma_hoc___5FB337D6" ManuallyRouted="false" />
-        <AssociationConnector Association="SoLienLacDienTuModel.FK__diem_kt__ma_hs__5DCAEF64" ManuallyRouted="false" />
-        <AssociationConnector Association="SoLienLacDienTuModel.FK__diem_kt__ma_mon__5CD6CB2B" ManuallyRouted="false" />
-        <AssociationConnector Association="SoLienLacDienTuModel.FK__diem_kt__ma_nam__5EBF139D" ManuallyRouted="false" />
-        <AssociationConnector Association="SoLienLacDienTuModel.FK__lop_hoc__ma_gv__5070F446" ManuallyRouted="false" />
-        <AssociationConnector Association="SoLienLacDienTuModel.FK__thoi_khoa__ma_gv__693CA210" ManuallyRouted="false" />
-        <AssociationConnector Association="SoLienLacDienTuModel.FK__thoi_khoa__ma_ho__6B24EA82" ManuallyRouted="false" />
-        <AssociationConnector Association="SoLienLacDienTuModel.FK__thoi_khoa__ma_lo__68487DD7" ManuallyRouted="false" />
-        <AssociationConnector Association="SoLienLacDienTuModel.FK__thoi_khoa__ma_mo__6A30C649" ManuallyRouted="false" />
-        <AssociationConnector Association="SoLienLacDienTuModel.FK__thoi_khoa__ma_na__6C190EBB" ManuallyRouted="false" />
-        <AssociationConnector Association="SoLienLacDienTuModel.chi_tiet_lop_hoc" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SoLienLacDienTuModel.giao_vien" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="SoLienLacDienTuModel.hanh_kiem" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="SoLienLacDienTuModel.hoc_ki" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SoLienLacDienTuModel.hoc_sinh" Width="1.5" PointX="0.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SoLienLacDienTuModel.lop_hoc" Width="1.5" PointX="0.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SoLienLacDienTuModel.mon_hoc" Width="1.5" PointX="0.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SoLienLacDienTuModel.nam_hoc" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SoLienLacDienTuModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SoLienLacDienTuModel.thoi_khoa_bieu" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="SoLienLacDienTuModel.FK__bao_cao__ma_hanh__6EF57B66" ManuallyRouted="false" />
+        <AssociationConnector Association="SoLienLacDienTuModel.FK__bao_cao__ma_hoc___6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="SoLienLacDienTuModel.FK__bao_cao__ma_hs__6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="SoLienLacDienTuModel.FK__bao_cao__ma_nam__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="SoLienLacDienTuModel.FK__chi_tiet___ma_hs__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="SoLienLacDienTuModel.FK__chi_tiet___ma_lo__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="SoLienLacDienTuModel.FK__diem_kt__ma_hoc___6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="SoLienLacDienTuModel.FK__diem_kt__ma_hs__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="SoLienLacDienTuModel.FK__diem_kt__ma_mon__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="SoLienLacDienTuModel.FK__diem_kt__ma_nam__6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="SoLienLacDienTuModel.FK__lop_hoc__ma_gv__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="SoLienLacDienTuModel.FK__thoi_khoa__ma_gv__74AE54BC" ManuallyRouted="false" />
+        <AssociationConnector Association="SoLienLacDienTuModel.FK__thoi_khoa__ma_ho__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="SoLienLacDienTuModel.FK__thoi_khoa__ma_lo__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="SoLienLacDienTuModel.FK__thoi_khoa__ma_mo__75A278F5" ManuallyRouted="false" />
+        <AssociationConnector Association="SoLienLacDienTuModel.FK__thoi_khoa__ma_na__778AC167" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

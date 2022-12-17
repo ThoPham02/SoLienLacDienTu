@@ -26,6 +26,7 @@ namespace Model.EF
         }
     
         public virtual DbSet<bao_cao> bao_cao { get; set; }
+        public virtual DbSet<chi_tiet_lop_hoc> chi_tiet_lop_hoc { get; set; }
         public virtual DbSet<diem_kt> diem_kt { get; set; }
         public virtual DbSet<giao_vien> giao_vien { get; set; }
         public virtual DbSet<hanh_kiem> hanh_kiem { get; set; }

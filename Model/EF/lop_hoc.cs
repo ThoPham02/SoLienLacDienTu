@@ -17,18 +17,18 @@ namespace Model.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public lop_hoc()
         {
+            this.chi_tiet_lop_hoc = new HashSet<chi_tiet_lop_hoc>();
             this.thoi_khoa_bieu = new HashSet<thoi_khoa_bieu>();
-            this.hoc_sinh = new HashSet<hoc_sinh>();
         }
     
         public int ma_lop { get; set; }
         public string ten { get; set; }
         public string ma_gv { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<chi_tiet_lop_hoc> chi_tiet_lop_hoc { get; set; }
         public virtual giao_vien giao_vien { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<thoi_khoa_bieu> thoi_khoa_bieu { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<hoc_sinh> hoc_sinh { get; set; }
     }
 }

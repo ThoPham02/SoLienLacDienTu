@@ -19,11 +19,11 @@
         </EntityType>
         <EntityType Name="chi_tiet_lop_hoc">
           <Key>
-            <PropertyRef Name="ma_lop" />
-            <PropertyRef Name="ma_hs" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="ma_lop" Type="int" Nullable="false" />
-          <Property Name="ma_hs" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ma_lop" Type="int" />
+          <Property Name="ma_hs" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="diem_kt">
           <Key>
@@ -121,7 +121,7 @@
           <Property Name="ma_hoc_ki" Type="int" />
           <Property Name="ma_nam_hoc" Type="int" />
         </EntityType>
-        <Association Name="FK__bao_cao__ma_hanh__6383C8BA">
+        <Association Name="FK__bao_cao__ma_hanh__6EF57B66">
           <End Role="hanh_kiem" Type="Self.hanh_kiem" Multiplicity="0..1" />
           <End Role="bao_cao" Type="Self.bao_cao" Multiplicity="*" />
           <ReferentialConstraint>
@@ -133,7 +133,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__bao_cao__ma_hoc___6477ECF3">
+        <Association Name="FK__bao_cao__ma_hoc___6FE99F9F">
           <End Role="hoc_ki" Type="Self.hoc_ki" Multiplicity="0..1" />
           <End Role="bao_cao" Type="Self.bao_cao" Multiplicity="*" />
           <ReferentialConstraint>
@@ -145,7 +145,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__bao_cao__ma_hs__628FA481">
+        <Association Name="FK__bao_cao__ma_hs__6E01572D">
           <End Role="hoc_sinh" Type="Self.hoc_sinh" Multiplicity="0..1" />
           <End Role="bao_cao" Type="Self.bao_cao" Multiplicity="*" />
           <ReferentialConstraint>
@@ -157,7 +157,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__bao_cao__ma_nam__656C112C">
+        <Association Name="FK__bao_cao__ma_nam__70DDC3D8">
           <End Role="nam_hoc" Type="Self.nam_hoc" Multiplicity="0..1" />
           <End Role="bao_cao" Type="Self.bao_cao" Multiplicity="*" />
           <ReferentialConstraint>
@@ -169,8 +169,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___ma_hs__5629CD9C">
-          <End Role="hoc_sinh" Type="Self.hoc_sinh" Multiplicity="1" />
+        <Association Name="FK__chi_tiet___ma_hs__619B8048">
+          <End Role="hoc_sinh" Type="Self.hoc_sinh" Multiplicity="0..1" />
           <End Role="chi_tiet_lop_hoc" Type="Self.chi_tiet_lop_hoc" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="hoc_sinh">
@@ -181,8 +181,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___ma_lo__5535A963">
-          <End Role="lop_hoc" Type="Self.lop_hoc" Multiplicity="1" />
+        <Association Name="FK__chi_tiet___ma_lo__60A75C0F">
+          <End Role="lop_hoc" Type="Self.lop_hoc" Multiplicity="0..1" />
           <End Role="chi_tiet_lop_hoc" Type="Self.chi_tiet_lop_hoc" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="lop_hoc">
@@ -193,7 +193,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__diem_kt__ma_hoc___5FB337D6">
+        <Association Name="FK__diem_kt__ma_hoc___6B24EA82">
           <End Role="hoc_ki" Type="Self.hoc_ki" Multiplicity="0..1" />
           <End Role="diem_kt" Type="Self.diem_kt" Multiplicity="*" />
           <ReferentialConstraint>
@@ -205,7 +205,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__diem_kt__ma_hs__5DCAEF64">
+        <Association Name="FK__diem_kt__ma_hs__693CA210">
           <End Role="hoc_sinh" Type="Self.hoc_sinh" Multiplicity="1" />
           <End Role="diem_kt" Type="Self.diem_kt" Multiplicity="*" />
           <ReferentialConstraint>
@@ -217,7 +217,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__diem_kt__ma_mon__5CD6CB2B">
+        <Association Name="FK__diem_kt__ma_mon__68487DD7">
           <End Role="mon_hoc" Type="Self.mon_hoc" Multiplicity="1" />
           <End Role="diem_kt" Type="Self.diem_kt" Multiplicity="*" />
           <ReferentialConstraint>
@@ -229,7 +229,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__diem_kt__ma_nam__5EBF139D">
+        <Association Name="FK__diem_kt__ma_nam__6A30C649">
           <End Role="nam_hoc" Type="Self.nam_hoc" Multiplicity="0..1" />
           <End Role="diem_kt" Type="Self.diem_kt" Multiplicity="*" />
           <ReferentialConstraint>
@@ -241,7 +241,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__lop_hoc__ma_gv__5070F446">
+        <Association Name="FK__lop_hoc__ma_gv__5BE2A6F2">
           <End Role="giao_vien" Type="Self.giao_vien" Multiplicity="0..1" />
           <End Role="lop_hoc" Type="Self.lop_hoc" Multiplicity="*" />
           <ReferentialConstraint>
@@ -253,7 +253,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__thoi_khoa__ma_gv__693CA210">
+        <Association Name="FK__thoi_khoa__ma_gv__74AE54BC">
           <End Role="giao_vien" Type="Self.giao_vien" Multiplicity="1" />
           <End Role="thoi_khoa_bieu" Type="Self.thoi_khoa_bieu" Multiplicity="*" />
           <ReferentialConstraint>
@@ -265,7 +265,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__thoi_khoa__ma_ho__6B24EA82">
+        <Association Name="FK__thoi_khoa__ma_ho__76969D2E">
           <End Role="hoc_ki" Type="Self.hoc_ki" Multiplicity="0..1" />
           <End Role="thoi_khoa_bieu" Type="Self.thoi_khoa_bieu" Multiplicity="*" />
           <ReferentialConstraint>
@@ -277,7 +277,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__thoi_khoa__ma_lo__68487DD7">
+        <Association Name="FK__thoi_khoa__ma_lo__73BA3083">
           <End Role="lop_hoc" Type="Self.lop_hoc" Multiplicity="1" />
           <End Role="thoi_khoa_bieu" Type="Self.thoi_khoa_bieu" Multiplicity="*" />
           <ReferentialConstraint>
@@ -289,7 +289,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__thoi_khoa__ma_mo__6A30C649">
+        <Association Name="FK__thoi_khoa__ma_mo__75A278F5">
           <End Role="mon_hoc" Type="Self.mon_hoc" Multiplicity="0..1" />
           <End Role="thoi_khoa_bieu" Type="Self.thoi_khoa_bieu" Multiplicity="*" />
           <ReferentialConstraint>
@@ -301,7 +301,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__thoi_khoa__ma_na__6C190EBB">
+        <Association Name="FK__thoi_khoa__ma_na__778AC167">
           <End Role="nam_hoc" Type="Self.nam_hoc" Multiplicity="0..1" />
           <End Role="thoi_khoa_bieu" Type="Self.thoi_khoa_bieu" Multiplicity="*" />
           <ReferentialConstraint>
@@ -326,67 +326,67 @@
           <EntitySet Name="nam_hoc" EntityType="Self.nam_hoc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="thoi_khoa_bieu" EntityType="Self.thoi_khoa_bieu" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__bao_cao__ma_hanh__6383C8BA" Association="Self.FK__bao_cao__ma_hanh__6383C8BA">
+          <AssociationSet Name="FK__bao_cao__ma_hanh__6EF57B66" Association="Self.FK__bao_cao__ma_hanh__6EF57B66">
             <End Role="hanh_kiem" EntitySet="hanh_kiem" />
             <End Role="bao_cao" EntitySet="bao_cao" />
           </AssociationSet>
-          <AssociationSet Name="FK__bao_cao__ma_hoc___6477ECF3" Association="Self.FK__bao_cao__ma_hoc___6477ECF3">
+          <AssociationSet Name="FK__bao_cao__ma_hoc___6FE99F9F" Association="Self.FK__bao_cao__ma_hoc___6FE99F9F">
             <End Role="hoc_ki" EntitySet="hoc_ki" />
             <End Role="bao_cao" EntitySet="bao_cao" />
           </AssociationSet>
-          <AssociationSet Name="FK__bao_cao__ma_hs__628FA481" Association="Self.FK__bao_cao__ma_hs__628FA481">
+          <AssociationSet Name="FK__bao_cao__ma_hs__6E01572D" Association="Self.FK__bao_cao__ma_hs__6E01572D">
             <End Role="hoc_sinh" EntitySet="hoc_sinh" />
             <End Role="bao_cao" EntitySet="bao_cao" />
           </AssociationSet>
-          <AssociationSet Name="FK__bao_cao__ma_nam__656C112C" Association="Self.FK__bao_cao__ma_nam__656C112C">
+          <AssociationSet Name="FK__bao_cao__ma_nam__70DDC3D8" Association="Self.FK__bao_cao__ma_nam__70DDC3D8">
             <End Role="nam_hoc" EntitySet="nam_hoc" />
             <End Role="bao_cao" EntitySet="bao_cao" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___ma_hs__5629CD9C" Association="Self.FK__chi_tiet___ma_hs__5629CD9C">
+          <AssociationSet Name="FK__chi_tiet___ma_hs__619B8048" Association="Self.FK__chi_tiet___ma_hs__619B8048">
             <End Role="hoc_sinh" EntitySet="hoc_sinh" />
             <End Role="chi_tiet_lop_hoc" EntitySet="chi_tiet_lop_hoc" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___ma_lo__5535A963" Association="Self.FK__chi_tiet___ma_lo__5535A963">
+          <AssociationSet Name="FK__chi_tiet___ma_lo__60A75C0F" Association="Self.FK__chi_tiet___ma_lo__60A75C0F">
             <End Role="lop_hoc" EntitySet="lop_hoc" />
             <End Role="chi_tiet_lop_hoc" EntitySet="chi_tiet_lop_hoc" />
           </AssociationSet>
-          <AssociationSet Name="FK__diem_kt__ma_hoc___5FB337D6" Association="Self.FK__diem_kt__ma_hoc___5FB337D6">
+          <AssociationSet Name="FK__diem_kt__ma_hoc___6B24EA82" Association="Self.FK__diem_kt__ma_hoc___6B24EA82">
             <End Role="hoc_ki" EntitySet="hoc_ki" />
             <End Role="diem_kt" EntitySet="diem_kt" />
           </AssociationSet>
-          <AssociationSet Name="FK__diem_kt__ma_hs__5DCAEF64" Association="Self.FK__diem_kt__ma_hs__5DCAEF64">
+          <AssociationSet Name="FK__diem_kt__ma_hs__693CA210" Association="Self.FK__diem_kt__ma_hs__693CA210">
             <End Role="hoc_sinh" EntitySet="hoc_sinh" />
             <End Role="diem_kt" EntitySet="diem_kt" />
           </AssociationSet>
-          <AssociationSet Name="FK__diem_kt__ma_mon__5CD6CB2B" Association="Self.FK__diem_kt__ma_mon__5CD6CB2B">
+          <AssociationSet Name="FK__diem_kt__ma_mon__68487DD7" Association="Self.FK__diem_kt__ma_mon__68487DD7">
             <End Role="mon_hoc" EntitySet="mon_hoc" />
             <End Role="diem_kt" EntitySet="diem_kt" />
           </AssociationSet>
-          <AssociationSet Name="FK__diem_kt__ma_nam__5EBF139D" Association="Self.FK__diem_kt__ma_nam__5EBF139D">
+          <AssociationSet Name="FK__diem_kt__ma_nam__6A30C649" Association="Self.FK__diem_kt__ma_nam__6A30C649">
             <End Role="nam_hoc" EntitySet="nam_hoc" />
             <End Role="diem_kt" EntitySet="diem_kt" />
           </AssociationSet>
-          <AssociationSet Name="FK__lop_hoc__ma_gv__5070F446" Association="Self.FK__lop_hoc__ma_gv__5070F446">
+          <AssociationSet Name="FK__lop_hoc__ma_gv__5BE2A6F2" Association="Self.FK__lop_hoc__ma_gv__5BE2A6F2">
             <End Role="giao_vien" EntitySet="giao_vien" />
             <End Role="lop_hoc" EntitySet="lop_hoc" />
           </AssociationSet>
-          <AssociationSet Name="FK__thoi_khoa__ma_gv__693CA210" Association="Self.FK__thoi_khoa__ma_gv__693CA210">
+          <AssociationSet Name="FK__thoi_khoa__ma_gv__74AE54BC" Association="Self.FK__thoi_khoa__ma_gv__74AE54BC">
             <End Role="giao_vien" EntitySet="giao_vien" />
             <End Role="thoi_khoa_bieu" EntitySet="thoi_khoa_bieu" />
           </AssociationSet>
-          <AssociationSet Name="FK__thoi_khoa__ma_ho__6B24EA82" Association="Self.FK__thoi_khoa__ma_ho__6B24EA82">
+          <AssociationSet Name="FK__thoi_khoa__ma_ho__76969D2E" Association="Self.FK__thoi_khoa__ma_ho__76969D2E">
             <End Role="hoc_ki" EntitySet="hoc_ki" />
             <End Role="thoi_khoa_bieu" EntitySet="thoi_khoa_bieu" />
           </AssociationSet>
-          <AssociationSet Name="FK__thoi_khoa__ma_lo__68487DD7" Association="Self.FK__thoi_khoa__ma_lo__68487DD7">
+          <AssociationSet Name="FK__thoi_khoa__ma_lo__73BA3083" Association="Self.FK__thoi_khoa__ma_lo__73BA3083">
             <End Role="lop_hoc" EntitySet="lop_hoc" />
             <End Role="thoi_khoa_bieu" EntitySet="thoi_khoa_bieu" />
           </AssociationSet>
-          <AssociationSet Name="FK__thoi_khoa__ma_mo__6A30C649" Association="Self.FK__thoi_khoa__ma_mo__6A30C649">
+          <AssociationSet Name="FK__thoi_khoa__ma_mo__75A278F5" Association="Self.FK__thoi_khoa__ma_mo__75A278F5">
             <End Role="mon_hoc" EntitySet="mon_hoc" />
             <End Role="thoi_khoa_bieu" EntitySet="thoi_khoa_bieu" />
           </AssociationSet>
-          <AssociationSet Name="FK__thoi_khoa__ma_na__6C190EBB" Association="Self.FK__thoi_khoa__ma_na__6C190EBB">
+          <AssociationSet Name="FK__thoi_khoa__ma_na__778AC167" Association="Self.FK__thoi_khoa__ma_na__778AC167">
             <End Role="nam_hoc" EntitySet="nam_hoc" />
             <End Role="thoi_khoa_bieu" EntitySet="thoi_khoa_bieu" />
           </AssociationSet>
@@ -407,10 +407,20 @@
           <Property Name="nhan_xet" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="ma_hoc_ki" Type="Int32" />
           <Property Name="ma_nam" Type="Int32" />
-          <NavigationProperty Name="hanh_kiem" Relationship="Self.FK__bao_cao__ma_hanh__6383C8BA" FromRole="bao_cao" ToRole="hanh_kiem" />
-          <NavigationProperty Name="hoc_ki" Relationship="Self.FK__bao_cao__ma_hoc___6477ECF3" FromRole="bao_cao" ToRole="hoc_ki" />
-          <NavigationProperty Name="hoc_sinh" Relationship="Self.FK__bao_cao__ma_hs__628FA481" FromRole="bao_cao" ToRole="hoc_sinh" />
-          <NavigationProperty Name="nam_hoc" Relationship="Self.FK__bao_cao__ma_nam__656C112C" FromRole="bao_cao" ToRole="nam_hoc" />
+          <NavigationProperty Name="hanh_kiem" Relationship="Self.FK__bao_cao__ma_hanh__6EF57B66" FromRole="bao_cao" ToRole="hanh_kiem" />
+          <NavigationProperty Name="hoc_ki" Relationship="Self.FK__bao_cao__ma_hoc___6FE99F9F" FromRole="bao_cao" ToRole="hoc_ki" />
+          <NavigationProperty Name="hoc_sinh" Relationship="Self.FK__bao_cao__ma_hs__6E01572D" FromRole="bao_cao" ToRole="hoc_sinh" />
+          <NavigationProperty Name="nam_hoc" Relationship="Self.FK__bao_cao__ma_nam__70DDC3D8" FromRole="bao_cao" ToRole="nam_hoc" />
+        </EntityType>
+        <EntityType Name="chi_tiet_lop_hoc">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ma_lop" Type="Int32" />
+          <Property Name="ma_hs" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="hoc_sinh" Relationship="Self.FK__chi_tiet___ma_hs__619B8048" FromRole="chi_tiet_lop_hoc" ToRole="hoc_sinh" />
+          <NavigationProperty Name="lop_hoc" Relationship="Self.FK__chi_tiet___ma_lo__60A75C0F" FromRole="chi_tiet_lop_hoc" ToRole="lop_hoc" />
         </EntityType>
         <EntityType Name="diem_kt">
           <Key>
@@ -424,10 +434,10 @@
           <Property Name="ma_mon" Type="Int32" Nullable="false" />
           <Property Name="ma_hoc_ki" Type="Int32" />
           <Property Name="ma_nam" Type="Int32" />
-          <NavigationProperty Name="hoc_ki" Relationship="Self.FK__diem_kt__ma_hoc___5FB337D6" FromRole="diem_kt" ToRole="hoc_ki" />
-          <NavigationProperty Name="hoc_sinh" Relationship="Self.FK__diem_kt__ma_hs__5DCAEF64" FromRole="diem_kt" ToRole="hoc_sinh" />
-          <NavigationProperty Name="mon_hoc" Relationship="Self.FK__diem_kt__ma_mon__5CD6CB2B" FromRole="diem_kt" ToRole="mon_hoc" />
-          <NavigationProperty Name="nam_hoc" Relationship="Self.FK__diem_kt__ma_nam__5EBF139D" FromRole="diem_kt" ToRole="nam_hoc" />
+          <NavigationProperty Name="hoc_ki" Relationship="Self.FK__diem_kt__ma_hoc___6B24EA82" FromRole="diem_kt" ToRole="hoc_ki" />
+          <NavigationProperty Name="hoc_sinh" Relationship="Self.FK__diem_kt__ma_hs__693CA210" FromRole="diem_kt" ToRole="hoc_sinh" />
+          <NavigationProperty Name="mon_hoc" Relationship="Self.FK__diem_kt__ma_mon__68487DD7" FromRole="diem_kt" ToRole="mon_hoc" />
+          <NavigationProperty Name="nam_hoc" Relationship="Self.FK__diem_kt__ma_nam__6A30C649" FromRole="diem_kt" ToRole="nam_hoc" />
         </EntityType>
         <EntityType Name="giao_vien">
           <Key>
@@ -439,8 +449,8 @@
           <Property Name="ngaySinh" Type="DateTime" Precision="0" />
           <Property Name="gioiTinh" Type="Byte" />
           <Property Name="sdt" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="lop_hoc" Relationship="Self.FK__lop_hoc__ma_gv__5070F446" FromRole="giao_vien" ToRole="lop_hoc" />
-          <NavigationProperty Name="thoi_khoa_bieu" Relationship="Self.FK__thoi_khoa__ma_gv__693CA210" FromRole="giao_vien" ToRole="thoi_khoa_bieu" />
+          <NavigationProperty Name="lop_hoc" Relationship="Self.FK__lop_hoc__ma_gv__5BE2A6F2" FromRole="giao_vien" ToRole="lop_hoc" />
+          <NavigationProperty Name="thoi_khoa_bieu" Relationship="Self.FK__thoi_khoa__ma_gv__74AE54BC" FromRole="giao_vien" ToRole="thoi_khoa_bieu" />
         </EntityType>
         <EntityType Name="hanh_kiem">
           <Key>
@@ -448,7 +458,7 @@
           </Key>
           <Property Name="ma_hanh_kiem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="loai" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="bao_cao" Relationship="Self.FK__bao_cao__ma_hanh__6383C8BA" FromRole="hanh_kiem" ToRole="bao_cao" />
+          <NavigationProperty Name="bao_cao" Relationship="Self.FK__bao_cao__ma_hanh__6EF57B66" FromRole="hanh_kiem" ToRole="bao_cao" />
         </EntityType>
         <EntityType Name="hoc_ki">
           <Key>
@@ -456,9 +466,9 @@
           </Key>
           <Property Name="ma_hoc_ki" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ten_hoc_ki" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="bao_cao" Relationship="Self.FK__bao_cao__ma_hoc___6477ECF3" FromRole="hoc_ki" ToRole="bao_cao" />
-          <NavigationProperty Name="diem_kt" Relationship="Self.FK__diem_kt__ma_hoc___5FB337D6" FromRole="hoc_ki" ToRole="diem_kt" />
-          <NavigationProperty Name="thoi_khoa_bieu" Relationship="Self.FK__thoi_khoa__ma_ho__6B24EA82" FromRole="hoc_ki" ToRole="thoi_khoa_bieu" />
+          <NavigationProperty Name="bao_cao" Relationship="Self.FK__bao_cao__ma_hoc___6FE99F9F" FromRole="hoc_ki" ToRole="bao_cao" />
+          <NavigationProperty Name="diem_kt" Relationship="Self.FK__diem_kt__ma_hoc___6B24EA82" FromRole="hoc_ki" ToRole="diem_kt" />
+          <NavigationProperty Name="thoi_khoa_bieu" Relationship="Self.FK__thoi_khoa__ma_ho__76969D2E" FromRole="hoc_ki" ToRole="thoi_khoa_bieu" />
         </EntityType>
         <EntityType Name="hoc_sinh">
           <Key>
@@ -472,9 +482,9 @@
           <Property Name="khoa" Type="Int32" />
           <Property Name="sdt" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="trang_thai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="bao_cao" Relationship="Self.FK__bao_cao__ma_hs__628FA481" FromRole="hoc_sinh" ToRole="bao_cao" />
-          <NavigationProperty Name="diem_kt" Relationship="Self.FK__diem_kt__ma_hs__5DCAEF64" FromRole="hoc_sinh" ToRole="diem_kt" />
-          <NavigationProperty Name="lop_hoc" Relationship="Self.chi_tiet_lop_hoc" FromRole="hoc_sinh" ToRole="lop_hoc" />
+          <NavigationProperty Name="bao_cao" Relationship="Self.FK__bao_cao__ma_hs__6E01572D" FromRole="hoc_sinh" ToRole="bao_cao" />
+          <NavigationProperty Name="chi_tiet_lop_hoc" Relationship="Self.FK__chi_tiet___ma_hs__619B8048" FromRole="hoc_sinh" ToRole="chi_tiet_lop_hoc" />
+          <NavigationProperty Name="diem_kt" Relationship="Self.FK__diem_kt__ma_hs__693CA210" FromRole="hoc_sinh" ToRole="diem_kt" />
         </EntityType>
         <EntityType Name="lop_hoc">
           <Key>
@@ -483,9 +493,9 @@
           <Property Name="ma_lop" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ten" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="ma_gv" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="giao_vien" Relationship="Self.FK__lop_hoc__ma_gv__5070F446" FromRole="lop_hoc" ToRole="giao_vien" />
-          <NavigationProperty Name="thoi_khoa_bieu" Relationship="Self.FK__thoi_khoa__ma_lo__68487DD7" FromRole="lop_hoc" ToRole="thoi_khoa_bieu" />
-          <NavigationProperty Name="hoc_sinh" Relationship="Self.chi_tiet_lop_hoc" FromRole="lop_hoc" ToRole="hoc_sinh" />
+          <NavigationProperty Name="chi_tiet_lop_hoc" Relationship="Self.FK__chi_tiet___ma_lo__60A75C0F" FromRole="lop_hoc" ToRole="chi_tiet_lop_hoc" />
+          <NavigationProperty Name="giao_vien" Relationship="Self.FK__lop_hoc__ma_gv__5BE2A6F2" FromRole="lop_hoc" ToRole="giao_vien" />
+          <NavigationProperty Name="thoi_khoa_bieu" Relationship="Self.FK__thoi_khoa__ma_lo__73BA3083" FromRole="lop_hoc" ToRole="thoi_khoa_bieu" />
         </EntityType>
         <EntityType Name="mon_hoc">
           <Key>
@@ -493,8 +503,8 @@
           </Key>
           <Property Name="ma_mon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ten" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="diem_kt" Relationship="Self.FK__diem_kt__ma_mon__5CD6CB2B" FromRole="mon_hoc" ToRole="diem_kt" />
-          <NavigationProperty Name="thoi_khoa_bieu" Relationship="Self.FK__thoi_khoa__ma_mo__6A30C649" FromRole="mon_hoc" ToRole="thoi_khoa_bieu" />
+          <NavigationProperty Name="diem_kt" Relationship="Self.FK__diem_kt__ma_mon__68487DD7" FromRole="mon_hoc" ToRole="diem_kt" />
+          <NavigationProperty Name="thoi_khoa_bieu" Relationship="Self.FK__thoi_khoa__ma_mo__75A278F5" FromRole="mon_hoc" ToRole="thoi_khoa_bieu" />
         </EntityType>
         <EntityType Name="nam_hoc">
           <Key>
@@ -502,9 +512,9 @@
           </Key>
           <Property Name="ma_nam" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ten_nam_hoc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="bao_cao" Relationship="Self.FK__bao_cao__ma_nam__656C112C" FromRole="nam_hoc" ToRole="bao_cao" />
-          <NavigationProperty Name="diem_kt" Relationship="Self.FK__diem_kt__ma_nam__5EBF139D" FromRole="nam_hoc" ToRole="diem_kt" />
-          <NavigationProperty Name="thoi_khoa_bieu" Relationship="Self.FK__thoi_khoa__ma_na__6C190EBB" FromRole="nam_hoc" ToRole="thoi_khoa_bieu" />
+          <NavigationProperty Name="bao_cao" Relationship="Self.FK__bao_cao__ma_nam__70DDC3D8" FromRole="nam_hoc" ToRole="bao_cao" />
+          <NavigationProperty Name="diem_kt" Relationship="Self.FK__diem_kt__ma_nam__6A30C649" FromRole="nam_hoc" ToRole="diem_kt" />
+          <NavigationProperty Name="thoi_khoa_bieu" Relationship="Self.FK__thoi_khoa__ma_na__778AC167" FromRole="nam_hoc" ToRole="thoi_khoa_bieu" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -528,13 +538,13 @@
           <Property Name="tiet" Type="Int32" Nullable="false" />
           <Property Name="ma_hoc_ki" Type="Int32" />
           <Property Name="ma_nam_hoc" Type="Int32" />
-          <NavigationProperty Name="giao_vien" Relationship="Self.FK__thoi_khoa__ma_gv__693CA210" FromRole="thoi_khoa_bieu" ToRole="giao_vien" />
-          <NavigationProperty Name="hoc_ki" Relationship="Self.FK__thoi_khoa__ma_ho__6B24EA82" FromRole="thoi_khoa_bieu" ToRole="hoc_ki" />
-          <NavigationProperty Name="lop_hoc" Relationship="Self.FK__thoi_khoa__ma_lo__68487DD7" FromRole="thoi_khoa_bieu" ToRole="lop_hoc" />
-          <NavigationProperty Name="mon_hoc" Relationship="Self.FK__thoi_khoa__ma_mo__6A30C649" FromRole="thoi_khoa_bieu" ToRole="mon_hoc" />
-          <NavigationProperty Name="nam_hoc" Relationship="Self.FK__thoi_khoa__ma_na__6C190EBB" FromRole="thoi_khoa_bieu" ToRole="nam_hoc" />
+          <NavigationProperty Name="giao_vien" Relationship="Self.FK__thoi_khoa__ma_gv__74AE54BC" FromRole="thoi_khoa_bieu" ToRole="giao_vien" />
+          <NavigationProperty Name="hoc_ki" Relationship="Self.FK__thoi_khoa__ma_ho__76969D2E" FromRole="thoi_khoa_bieu" ToRole="hoc_ki" />
+          <NavigationProperty Name="lop_hoc" Relationship="Self.FK__thoi_khoa__ma_lo__73BA3083" FromRole="thoi_khoa_bieu" ToRole="lop_hoc" />
+          <NavigationProperty Name="mon_hoc" Relationship="Self.FK__thoi_khoa__ma_mo__75A278F5" FromRole="thoi_khoa_bieu" ToRole="mon_hoc" />
+          <NavigationProperty Name="nam_hoc" Relationship="Self.FK__thoi_khoa__ma_na__778AC167" FromRole="thoi_khoa_bieu" ToRole="nam_hoc" />
         </EntityType>
-        <Association Name="FK__bao_cao__ma_hanh__6383C8BA">
+        <Association Name="FK__bao_cao__ma_hanh__6EF57B66">
           <End Role="hanh_kiem" Type="Self.hanh_kiem" Multiplicity="0..1" />
           <End Role="bao_cao" Type="Self.bao_cao" Multiplicity="*" />
           <ReferentialConstraint>
@@ -546,7 +556,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__bao_cao__ma_hoc___6477ECF3">
+        <Association Name="FK__bao_cao__ma_hoc___6FE99F9F">
           <End Role="hoc_ki" Type="Self.hoc_ki" Multiplicity="0..1" />
           <End Role="bao_cao" Type="Self.bao_cao" Multiplicity="*" />
           <ReferentialConstraint>
@@ -558,7 +568,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__bao_cao__ma_hs__628FA481">
+        <Association Name="FK__bao_cao__ma_hs__6E01572D">
           <End Role="hoc_sinh" Type="Self.hoc_sinh" Multiplicity="0..1" />
           <End Role="bao_cao" Type="Self.bao_cao" Multiplicity="*" />
           <ReferentialConstraint>
@@ -570,7 +580,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__bao_cao__ma_nam__656C112C">
+        <Association Name="FK__bao_cao__ma_nam__70DDC3D8">
           <End Role="nam_hoc" Type="Self.nam_hoc" Multiplicity="0..1" />
           <End Role="bao_cao" Type="Self.bao_cao" Multiplicity="*" />
           <ReferentialConstraint>
@@ -582,7 +592,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__diem_kt__ma_hoc___5FB337D6">
+        <Association Name="FK__chi_tiet___ma_hs__619B8048">
+          <End Role="hoc_sinh" Type="Self.hoc_sinh" Multiplicity="0..1" />
+          <End Role="chi_tiet_lop_hoc" Type="Self.chi_tiet_lop_hoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hoc_sinh">
+              <PropertyRef Name="ma_hs" />
+            </Principal>
+            <Dependent Role="chi_tiet_lop_hoc">
+              <PropertyRef Name="ma_hs" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__chi_tiet___ma_lo__60A75C0F">
+          <End Role="lop_hoc" Type="Self.lop_hoc" Multiplicity="0..1" />
+          <End Role="chi_tiet_lop_hoc" Type="Self.chi_tiet_lop_hoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lop_hoc">
+              <PropertyRef Name="ma_lop" />
+            </Principal>
+            <Dependent Role="chi_tiet_lop_hoc">
+              <PropertyRef Name="ma_lop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__diem_kt__ma_hoc___6B24EA82">
           <End Role="hoc_ki" Type="Self.hoc_ki" Multiplicity="0..1" />
           <End Role="diem_kt" Type="Self.diem_kt" Multiplicity="*" />
           <ReferentialConstraint>
@@ -594,7 +628,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__diem_kt__ma_hs__5DCAEF64">
+        <Association Name="FK__diem_kt__ma_hs__693CA210">
           <End Role="hoc_sinh" Type="Self.hoc_sinh" Multiplicity="1" />
           <End Role="diem_kt" Type="Self.diem_kt" Multiplicity="*" />
           <ReferentialConstraint>
@@ -606,7 +640,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__diem_kt__ma_mon__5CD6CB2B">
+        <Association Name="FK__diem_kt__ma_mon__68487DD7">
           <End Role="mon_hoc" Type="Self.mon_hoc" Multiplicity="1" />
           <End Role="diem_kt" Type="Self.diem_kt" Multiplicity="*" />
           <ReferentialConstraint>
@@ -618,7 +652,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__diem_kt__ma_nam__5EBF139D">
+        <Association Name="FK__diem_kt__ma_nam__6A30C649">
           <End Role="nam_hoc" Type="Self.nam_hoc" Multiplicity="0..1" />
           <End Role="diem_kt" Type="Self.diem_kt" Multiplicity="*" />
           <ReferentialConstraint>
@@ -630,7 +664,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__lop_hoc__ma_gv__5070F446">
+        <Association Name="FK__lop_hoc__ma_gv__5BE2A6F2">
           <End Role="giao_vien" Type="Self.giao_vien" Multiplicity="0..1" />
           <End Role="lop_hoc" Type="Self.lop_hoc" Multiplicity="*" />
           <ReferentialConstraint>
@@ -642,7 +676,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__thoi_khoa__ma_gv__693CA210">
+        <Association Name="FK__thoi_khoa__ma_gv__74AE54BC">
           <End Role="giao_vien" Type="Self.giao_vien" Multiplicity="1" />
           <End Role="thoi_khoa_bieu" Type="Self.thoi_khoa_bieu" Multiplicity="*" />
           <ReferentialConstraint>
@@ -654,7 +688,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__thoi_khoa__ma_ho__6B24EA82">
+        <Association Name="FK__thoi_khoa__ma_ho__76969D2E">
           <End Role="hoc_ki" Type="Self.hoc_ki" Multiplicity="0..1" />
           <End Role="thoi_khoa_bieu" Type="Self.thoi_khoa_bieu" Multiplicity="*" />
           <ReferentialConstraint>
@@ -666,7 +700,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__thoi_khoa__ma_lo__68487DD7">
+        <Association Name="FK__thoi_khoa__ma_lo__73BA3083">
           <End Role="lop_hoc" Type="Self.lop_hoc" Multiplicity="1" />
           <End Role="thoi_khoa_bieu" Type="Self.thoi_khoa_bieu" Multiplicity="*" />
           <ReferentialConstraint>
@@ -678,7 +712,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__thoi_khoa__ma_mo__6A30C649">
+        <Association Name="FK__thoi_khoa__ma_mo__75A278F5">
           <End Role="mon_hoc" Type="Self.mon_hoc" Multiplicity="0..1" />
           <End Role="thoi_khoa_bieu" Type="Self.thoi_khoa_bieu" Multiplicity="*" />
           <ReferentialConstraint>
@@ -690,7 +724,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__thoi_khoa__ma_na__6C190EBB">
+        <Association Name="FK__thoi_khoa__ma_na__778AC167">
           <End Role="nam_hoc" Type="Self.nam_hoc" Multiplicity="0..1" />
           <End Role="thoi_khoa_bieu" Type="Self.thoi_khoa_bieu" Multiplicity="*" />
           <ReferentialConstraint>
@@ -702,12 +736,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="chi_tiet_lop_hoc">
-          <End Role="hoc_sinh" Type="Self.hoc_sinh" Multiplicity="*" />
-          <End Role="lop_hoc" Type="Self.lop_hoc" Multiplicity="*" />
-        </Association>
         <EntityContainer Name="SoLienLacDienTuEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="bao_cao" EntityType="Self.bao_cao" />
+          <EntitySet Name="chi_tiet_lop_hoc" EntityType="Self.chi_tiet_lop_hoc" />
           <EntitySet Name="diem_kt" EntityType="Self.diem_kt" />
           <EntitySet Name="giao_vien" EntityType="Self.giao_vien" />
           <EntitySet Name="hanh_kiem" EntityType="Self.hanh_kiem" />
@@ -718,65 +749,69 @@
           <EntitySet Name="nam_hoc" EntityType="Self.nam_hoc" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="thoi_khoa_bieu" EntityType="Self.thoi_khoa_bieu" />
-          <AssociationSet Name="FK__bao_cao__ma_hanh__6383C8BA" Association="Self.FK__bao_cao__ma_hanh__6383C8BA">
+          <AssociationSet Name="FK__bao_cao__ma_hanh__6EF57B66" Association="Self.FK__bao_cao__ma_hanh__6EF57B66">
             <End Role="hanh_kiem" EntitySet="hanh_kiem" />
             <End Role="bao_cao" EntitySet="bao_cao" />
           </AssociationSet>
-          <AssociationSet Name="FK__bao_cao__ma_hoc___6477ECF3" Association="Self.FK__bao_cao__ma_hoc___6477ECF3">
+          <AssociationSet Name="FK__bao_cao__ma_hoc___6FE99F9F" Association="Self.FK__bao_cao__ma_hoc___6FE99F9F">
             <End Role="hoc_ki" EntitySet="hoc_ki" />
             <End Role="bao_cao" EntitySet="bao_cao" />
           </AssociationSet>
-          <AssociationSet Name="FK__bao_cao__ma_hs__628FA481" Association="Self.FK__bao_cao__ma_hs__628FA481">
+          <AssociationSet Name="FK__bao_cao__ma_hs__6E01572D" Association="Self.FK__bao_cao__ma_hs__6E01572D">
             <End Role="hoc_sinh" EntitySet="hoc_sinh" />
             <End Role="bao_cao" EntitySet="bao_cao" />
           </AssociationSet>
-          <AssociationSet Name="FK__bao_cao__ma_nam__656C112C" Association="Self.FK__bao_cao__ma_nam__656C112C">
+          <AssociationSet Name="FK__bao_cao__ma_nam__70DDC3D8" Association="Self.FK__bao_cao__ma_nam__70DDC3D8">
             <End Role="nam_hoc" EntitySet="nam_hoc" />
             <End Role="bao_cao" EntitySet="bao_cao" />
           </AssociationSet>
-          <AssociationSet Name="FK__diem_kt__ma_hoc___5FB337D6" Association="Self.FK__diem_kt__ma_hoc___5FB337D6">
+          <AssociationSet Name="FK__chi_tiet___ma_hs__619B8048" Association="Self.FK__chi_tiet___ma_hs__619B8048">
+            <End Role="hoc_sinh" EntitySet="hoc_sinh" />
+            <End Role="chi_tiet_lop_hoc" EntitySet="chi_tiet_lop_hoc" />
+          </AssociationSet>
+          <AssociationSet Name="FK__chi_tiet___ma_lo__60A75C0F" Association="Self.FK__chi_tiet___ma_lo__60A75C0F">
+            <End Role="lop_hoc" EntitySet="lop_hoc" />
+            <End Role="chi_tiet_lop_hoc" EntitySet="chi_tiet_lop_hoc" />
+          </AssociationSet>
+          <AssociationSet Name="FK__diem_kt__ma_hoc___6B24EA82" Association="Self.FK__diem_kt__ma_hoc___6B24EA82">
             <End Role="hoc_ki" EntitySet="hoc_ki" />
             <End Role="diem_kt" EntitySet="diem_kt" />
           </AssociationSet>
-          <AssociationSet Name="FK__diem_kt__ma_hs__5DCAEF64" Association="Self.FK__diem_kt__ma_hs__5DCAEF64">
+          <AssociationSet Name="FK__diem_kt__ma_hs__693CA210" Association="Self.FK__diem_kt__ma_hs__693CA210">
             <End Role="hoc_sinh" EntitySet="hoc_sinh" />
             <End Role="diem_kt" EntitySet="diem_kt" />
           </AssociationSet>
-          <AssociationSet Name="FK__diem_kt__ma_mon__5CD6CB2B" Association="Self.FK__diem_kt__ma_mon__5CD6CB2B">
+          <AssociationSet Name="FK__diem_kt__ma_mon__68487DD7" Association="Self.FK__diem_kt__ma_mon__68487DD7">
             <End Role="mon_hoc" EntitySet="mon_hoc" />
             <End Role="diem_kt" EntitySet="diem_kt" />
           </AssociationSet>
-          <AssociationSet Name="FK__diem_kt__ma_nam__5EBF139D" Association="Self.FK__diem_kt__ma_nam__5EBF139D">
+          <AssociationSet Name="FK__diem_kt__ma_nam__6A30C649" Association="Self.FK__diem_kt__ma_nam__6A30C649">
             <End Role="nam_hoc" EntitySet="nam_hoc" />
             <End Role="diem_kt" EntitySet="diem_kt" />
           </AssociationSet>
-          <AssociationSet Name="FK__lop_hoc__ma_gv__5070F446" Association="Self.FK__lop_hoc__ma_gv__5070F446">
+          <AssociationSet Name="FK__lop_hoc__ma_gv__5BE2A6F2" Association="Self.FK__lop_hoc__ma_gv__5BE2A6F2">
             <End Role="giao_vien" EntitySet="giao_vien" />
             <End Role="lop_hoc" EntitySet="lop_hoc" />
           </AssociationSet>
-          <AssociationSet Name="FK__thoi_khoa__ma_gv__693CA210" Association="Self.FK__thoi_khoa__ma_gv__693CA210">
+          <AssociationSet Name="FK__thoi_khoa__ma_gv__74AE54BC" Association="Self.FK__thoi_khoa__ma_gv__74AE54BC">
             <End Role="giao_vien" EntitySet="giao_vien" />
             <End Role="thoi_khoa_bieu" EntitySet="thoi_khoa_bieu" />
           </AssociationSet>
-          <AssociationSet Name="FK__thoi_khoa__ma_ho__6B24EA82" Association="Self.FK__thoi_khoa__ma_ho__6B24EA82">
+          <AssociationSet Name="FK__thoi_khoa__ma_ho__76969D2E" Association="Self.FK__thoi_khoa__ma_ho__76969D2E">
             <End Role="hoc_ki" EntitySet="hoc_ki" />
             <End Role="thoi_khoa_bieu" EntitySet="thoi_khoa_bieu" />
           </AssociationSet>
-          <AssociationSet Name="FK__thoi_khoa__ma_lo__68487DD7" Association="Self.FK__thoi_khoa__ma_lo__68487DD7">
+          <AssociationSet Name="FK__thoi_khoa__ma_lo__73BA3083" Association="Self.FK__thoi_khoa__ma_lo__73BA3083">
             <End Role="lop_hoc" EntitySet="lop_hoc" />
             <End Role="thoi_khoa_bieu" EntitySet="thoi_khoa_bieu" />
           </AssociationSet>
-          <AssociationSet Name="FK__thoi_khoa__ma_mo__6A30C649" Association="Self.FK__thoi_khoa__ma_mo__6A30C649">
+          <AssociationSet Name="FK__thoi_khoa__ma_mo__75A278F5" Association="Self.FK__thoi_khoa__ma_mo__75A278F5">
             <End Role="mon_hoc" EntitySet="mon_hoc" />
             <End Role="thoi_khoa_bieu" EntitySet="thoi_khoa_bieu" />
           </AssociationSet>
-          <AssociationSet Name="FK__thoi_khoa__ma_na__6C190EBB" Association="Self.FK__thoi_khoa__ma_na__6C190EBB">
+          <AssociationSet Name="FK__thoi_khoa__ma_na__778AC167" Association="Self.FK__thoi_khoa__ma_na__778AC167">
             <End Role="nam_hoc" EntitySet="nam_hoc" />
             <End Role="thoi_khoa_bieu" EntitySet="thoi_khoa_bieu" />
-          </AssociationSet>
-          <AssociationSet Name="chi_tiet_lop_hoc" Association="Self.chi_tiet_lop_hoc">
-            <End Role="hoc_sinh" EntitySet="hoc_sinh" />
-            <End Role="lop_hoc" EntitySet="lop_hoc" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -795,6 +830,15 @@
                 <ScalarProperty Name="nhan_xet" ColumnName="nhan_xet" />
                 <ScalarProperty Name="ma_hoc_ki" ColumnName="ma_hoc_ki" />
                 <ScalarProperty Name="ma_nam" ColumnName="ma_nam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="chi_tiet_lop_hoc">
+            <EntityTypeMapping TypeName="SoLienLacDienTuModel.chi_tiet_lop_hoc">
+              <MappingFragment StoreEntitySet="chi_tiet_lop_hoc">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ma_lop" ColumnName="ma_lop" />
+                <ScalarProperty Name="ma_hs" ColumnName="ma_hs" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -900,14 +944,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="chi_tiet_lop_hoc" TypeName="SoLienLacDienTuModel.chi_tiet_lop_hoc" StoreEntitySet="chi_tiet_lop_hoc">
-            <EndProperty Name="hoc_sinh">
-              <ScalarProperty Name="ma_hs" ColumnName="ma_hs" />
-            </EndProperty>
-            <EndProperty Name="lop_hoc">
-              <ScalarProperty Name="ma_lop" ColumnName="ma_lop" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

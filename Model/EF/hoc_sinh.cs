@@ -18,8 +18,8 @@ namespace Model.EF
         public hoc_sinh()
         {
             this.bao_cao = new HashSet<bao_cao>();
+            this.chi_tiet_lop_hoc = new HashSet<chi_tiet_lop_hoc>();
             this.diem_kt = new HashSet<diem_kt>();
-            this.lop_hoc = new HashSet<lop_hoc>();
         }
     
         public string ma_hs { get; set; }
@@ -34,8 +34,8 @@ namespace Model.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<bao_cao> bao_cao { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<diem_kt> diem_kt { get; set; }
+        public virtual ICollection<chi_tiet_lop_hoc> chi_tiet_lop_hoc { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<lop_hoc> lop_hoc { get; set; }
+        public virtual ICollection<diem_kt> diem_kt { get; set; }
     }
 }
