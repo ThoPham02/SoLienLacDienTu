@@ -56,6 +56,7 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // colMaHK
             // 
@@ -132,6 +133,7 @@
             this.button3.TabIndex = 7;
             this.button3.Text = "Sửa";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -142,6 +144,7 @@
             this.button4.TabIndex = 8;
             this.button4.Text = "Sửa";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -180,6 +183,7 @@
             this.Controls.Add(this.listView1);
             this.Name = "ControlAdmin_HK";
             this.Size = new System.Drawing.Size(1604, 856);
+            this.Load += new System.EventHandler(this.ControlAdmin_HK_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

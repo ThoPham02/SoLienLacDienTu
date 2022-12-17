@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
+            this.colMaHK = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colHK = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -39,8 +41,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.colMaHK = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colHK = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView1
@@ -56,6 +56,17 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // colMaHK
+            // 
+            this.colMaHK.Text = "Mã học kì";
+            this.colMaHK.Width = 150;
+            // 
+            // colHK
+            // 
+            this.colHK.Text = "Học kì";
+            this.colHK.Width = 150;
             // 
             // label1
             // 
@@ -84,6 +95,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(320, 30);
             this.textBox1.TabIndex = 3;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
@@ -94,6 +106,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Sửa";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox2
             // 
@@ -112,6 +125,7 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "Sửa";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -143,6 +157,7 @@
             this.button5.TabIndex = 9;
             this.button5.Text = "Làm mới";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -153,16 +168,7 @@
             this.button6.TabIndex = 10;
             this.button6.Text = "Cập nhật thông tin";
             this.button6.UseVisualStyleBackColor = true;
-            // 
-            // colMaHK
-            // 
-            this.colMaHK.Text = "Mã học kì";
-            this.colMaHK.Width = 150;
-            // 
-            // colHK
-            // 
-            this.colHK.Text = "Học kì";
-            this.colHK.Width = 150;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // ControlAdmin_HocKi
             // 

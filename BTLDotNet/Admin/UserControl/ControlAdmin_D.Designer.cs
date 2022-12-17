@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
+            this.colMaHS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colDiem = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colLoai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colMaMon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colMaHK = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colMaNam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -51,12 +57,6 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.colMaHS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colDiem = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colLoai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMaMon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMaHK = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMaNam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView1
@@ -76,6 +76,37 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // colMaHS
+            // 
+            this.colMaHS.Text = "Mã học sinh";
+            this.colMaHS.Width = 150;
+            // 
+            // colDiem
+            // 
+            this.colDiem.Text = "Điểm";
+            this.colDiem.Width = 150;
+            // 
+            // colLoai
+            // 
+            this.colLoai.Text = "Loại";
+            this.colLoai.Width = 150;
+            // 
+            // colMaMon
+            // 
+            this.colMaMon.Text = "Mã Môn";
+            this.colMaMon.Width = 150;
+            // 
+            // colMaHK
+            // 
+            this.colMaHK.Text = "Mã Học Kì";
+            this.colMaHK.Width = 150;
+            // 
+            // colMaNam
+            // 
+            this.colMaNam.Text = "Mã Năm";
+            this.colMaNam.Width = 150;
             // 
             // label1
             // 
@@ -214,6 +245,7 @@
             this.button3.TabIndex = 15;
             this.button3.Text = "Làm mới";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -224,6 +256,7 @@
             this.button4.TabIndex = 16;
             this.button4.Text = "Cập nhật thông tin";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -234,6 +267,7 @@
             this.button5.TabIndex = 17;
             this.button5.Text = "Sửa";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -244,6 +278,7 @@
             this.button6.TabIndex = 18;
             this.button6.Text = "Sửa";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -254,6 +289,7 @@
             this.button7.TabIndex = 19;
             this.button7.Text = "Sửa";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -264,6 +300,7 @@
             this.button8.TabIndex = 20;
             this.button8.Text = "Sửa";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -274,6 +311,7 @@
             this.button9.TabIndex = 21;
             this.button9.Text = "Sửa";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -284,36 +322,7 @@
             this.button10.TabIndex = 22;
             this.button10.Text = "Sửa";
             this.button10.UseVisualStyleBackColor = true;
-            // 
-            // colMaHS
-            // 
-            this.colMaHS.Text = "Mã học sinh";
-            this.colMaHS.Width = 150;
-            // 
-            // colDiem
-            // 
-            this.colDiem.Text = "Điểm";
-            this.colDiem.Width = 150;
-            // 
-            // colLoai
-            // 
-            this.colLoai.Text = "Loại";
-            this.colLoai.Width = 150;
-            // 
-            // colMaMon
-            // 
-            this.colMaMon.Text = "Mã Môn";
-            this.colMaMon.Width = 150;
-            // 
-            // colMaHK
-            // 
-            this.colMaHK.Text = "Mã Học Kì";
-            this.colMaHK.Width = 150;
-            // 
-            // colMaNam
-            // 
-            this.colMaNam.Text = "Mã Năm";
-            this.colMaNam.Width = 150;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // ControlAdmin_D
             // 
@@ -344,6 +353,7 @@
             this.Controls.Add(this.listView1);
             this.Name = "ControlAdmin_D";
             this.Size = new System.Drawing.Size(1604, 856);
+            this.Load += new System.EventHandler(this.ControlAdmin_D_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

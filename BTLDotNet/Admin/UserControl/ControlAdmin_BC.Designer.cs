@@ -81,6 +81,7 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // colID
             // 
@@ -252,6 +253,7 @@
             this.button1.TabIndex = 15;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -262,6 +264,7 @@
             this.button2.TabIndex = 16;
             this.button2.Text = "Xóa";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button4
             // 
@@ -272,6 +275,7 @@
             this.button4.TabIndex = 18;
             this.button4.Text = "Sửa";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -282,6 +286,7 @@
             this.button5.TabIndex = 19;
             this.button5.Text = "Sửa";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -292,6 +297,7 @@
             this.button6.TabIndex = 20;
             this.button6.Text = "Sửa";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -302,6 +308,7 @@
             this.button7.TabIndex = 21;
             this.button7.Text = "Sửa";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -312,6 +319,7 @@
             this.button8.TabIndex = 22;
             this.button8.Text = "Sửa";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -322,6 +330,7 @@
             this.button9.TabIndex = 23;
             this.button9.Text = "Sửa";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -332,6 +341,7 @@
             this.button10.TabIndex = 24;
             this.button10.Text = "Sửa";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button3
             // 
@@ -342,6 +352,7 @@
             this.button3.TabIndex = 17;
             this.button3.Text = "Làm mới";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button11
             // 
@@ -352,6 +363,7 @@
             this.button11.TabIndex = 25;
             this.button11.Text = "Cập nhật thông tin";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // ControlAdmin_BC
             // 
@@ -385,6 +397,7 @@
             this.Controls.Add(this.listView1);
             this.Name = "ControlAdmin_BC";
             this.Size = new System.Drawing.Size(1604, 856);
+            this.Load += new System.EventHandler(this.ControlAdmin_BC_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
