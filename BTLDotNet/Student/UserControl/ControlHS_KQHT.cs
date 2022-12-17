@@ -32,16 +32,16 @@ namespace BTLDotNet
             var years = namHoc.GetYearList();
             foreach (var year in years)
             {
-                comboBox2.Items.Add(year.nam_hoc1);
+                comboBox2.Items.Add(year.ten_nam_hoc);
             }
             comboBox2.SelectedIndex = years.Count - 1;
 
             var semesters = hocKi.GetSemesterList();
             foreach (var semester in semesters)
             {
-                comboBox1.Items.Add(semester.hoc_ki1);
+                comboBox1.Items.Add(semester.ten_hoc_ki);
             }
-            comboBox1.SelectedIndex = semesters.Count - 1;
+            comboBox1.SelectedIndex = 0;
         }
 
         public void loadData()
@@ -95,7 +95,6 @@ namespace BTLDotNet
             else
             {
                 textBox1.Text = hanhKiem.GetConductName((int)report.ma_hanh_kiem);
-
             }
             richTextBox1.ReadOnly = true;
             textBox1.ReadOnly = true;

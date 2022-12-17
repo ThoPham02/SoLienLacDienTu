@@ -16,11 +16,21 @@ namespace Controller
         {
             return dbContext.bao_cao.ToList();
         }
-        public bool CreateReport(Model.EF.bao_cao report)
+        public bool CreateReport(string ma_hs, string hanhkiem, string nhanXet, string hocKi, string namHoc)
         {
             try
             {
-                dbContext.bao_cao.Add(report);
+                Model.EF.bao_cao bc = new Model.EF.bao_cao();
+                HanhKiem hanhKiemCtrl = new HanhKiem();
+                HocKi hocKiCtrl = new HocKi();
+                NamHoc namHocCtrl = new NamHoc();
+
+                bc.ma_hs = ma_hs;
+                bc.nhan_xet = nhanXet;
+                bc.ma_hanh_kiem = hanhKiemCtrl.GetConductID(hanhkiem);
+                bc.ma_hoc_ki = hocKiCtrl.GetSemesterID(hocKi);
+                bc.ma_nam = namHocCtrl.GetYearID(namHoc);
+
                 dbContext.SaveChanges();
                 return true;
             }
@@ -61,15 +71,15 @@ namespace Controller
         {
             Model.EF.bao_cao baoCao = new Model.EF.bao_cao()
             {
-                
+
             };
-            var listBaoCao =    dbContext.bao_cao.
-                Where(baocao => 
-                    baocao.ma_hs == maHs 
-                    && baocao.ma_hoc_ki == maHocKi 
+            var listBaoCao = dbContext.bao_cao.
+                Where(baocao =>
+                    baocao.ma_hs == maHs
+                    && baocao.ma_hoc_ki == maHocKi
                     && baocao.ma_nam == maNam).
                 ToList();
-            if(listBaoCao.Count > 0 )
+            if (listBaoCao.Count > 0)
             {
                 baoCao = listBaoCao[0];
             }

@@ -14,6 +14,12 @@ namespace Controller
         {
             return dbContext.thoi_khoa_bieu.ToList();
         }
+        public List<Model.EF.thoi_khoa_bieu> GetScheduleByCondition(int maLop, int maHocKi, int maNamHoc)
+        {
+            return dbContext.thoi_khoa_bieu
+                .Where(db => db.ma_lop == maLop && db.ma_hoc_ki == maHocKi && db.ma_nam_hoc == maNamHoc)
+                .ToList();
+        }
         public bool CreateSchedule(Model.EF.thoi_khoa_bieu schedule)
         {
             try

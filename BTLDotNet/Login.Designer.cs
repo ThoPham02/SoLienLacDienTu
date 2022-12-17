@@ -34,7 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.login_btn = new System.Windows.Forms.Button();
             this.exit_btn = new System.Windows.Forms.Button();
-            this.showPass_rbtn = new System.Windows.Forms.RadioButton();
+            this.showPass_chkbox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -104,18 +104,17 @@
             this.exit_btn.UseVisualStyleBackColor = true;
             this.exit_btn.Click += new System.EventHandler(this.exit_btn_Click);
             // 
-            // showPass_rbtn
+            // showPass_chkbox
             // 
-            this.showPass_rbtn.AutoSize = true;
-            this.showPass_rbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showPass_rbtn.Location = new System.Drawing.Point(127, 133);
-            this.showPass_rbtn.Name = "showPass_rbtn";
-            this.showPass_rbtn.Size = new System.Drawing.Size(130, 24);
-            this.showPass_rbtn.TabIndex = 21;
-            this.showPass_rbtn.TabStop = true;
-            this.showPass_rbtn.Text = "Hiện mật khẩu";
-            this.showPass_rbtn.UseVisualStyleBackColor = true;
-            this.showPass_rbtn.CheckedChanged += new System.EventHandler(this.showPass_rbtn_CheckedChanged);
+            this.showPass_chkbox.AutoSize = true;
+            this.showPass_chkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showPass_chkbox.Location = new System.Drawing.Point(127, 141);
+            this.showPass_chkbox.Name = "showPass_chkbox";
+            this.showPass_chkbox.Size = new System.Drawing.Size(152, 24);
+            this.showPass_chkbox.TabIndex = 22;
+            this.showPass_chkbox.Text = "Hiển thị mật khẩu";
+            this.showPass_chkbox.UseVisualStyleBackColor = true;
+            this.showPass_chkbox.CheckedChanged += new System.EventHandler(this.showPass_chkbox_CheckedChanged);
             // 
             // Login
             // 
@@ -124,7 +123,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.exit_btn;
             this.ClientSize = new System.Drawing.Size(415, 261);
-            this.Controls.Add(this.showPass_rbtn);
+            this.Controls.Add(this.showPass_chkbox);
             this.Controls.Add(this.exit_btn);
             this.Controls.Add(this.login_btn);
             this.Controls.Add(this.txt_password);
@@ -149,7 +148,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button login_btn;
         private System.Windows.Forms.Button exit_btn;
-        private System.Windows.Forms.RadioButton showPass_rbtn;
+        private System.Windows.Forms.CheckBox showPass_chkbox;
     }
 }
 

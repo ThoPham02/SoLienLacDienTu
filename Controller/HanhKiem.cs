@@ -18,6 +18,12 @@ namespace Controller
         public string GetConductName(int maHanhKiem) {
             return dbContext.hanh_kiem.Single(b => b.ma_hanh_kiem.Equals(maHanhKiem)).loai;
         }
+
+        public int GetConductID(string hanhkiem)
+        {
+            return dbContext.hanh_kiem.Single(b => b.ma_hanh_kiem.Equals(hanhkiem)).ma_hanh_kiem;
+        }
+
         public bool CreateConduct(Model.EF.hanh_kiem conduct)
         {
             try

@@ -19,14 +19,17 @@ namespace Model.EF
         {
             this.bao_cao = new HashSet<bao_cao>();
             this.diem_kt = new HashSet<diem_kt>();
+            this.thoi_khoa_bieu = new HashSet<thoi_khoa_bieu>();
         }
     
         public int ma_hoc_ki { get; set; }
-        public string hoc_ki1 { get; set; }
+        public string ten_hoc_ki { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<bao_cao> bao_cao { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<diem_kt> diem_kt { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<thoi_khoa_bieu> thoi_khoa_bieu { get; set; }
     }
 }

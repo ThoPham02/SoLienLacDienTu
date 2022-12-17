@@ -162,5 +162,15 @@ namespace BTLDotNet
         {
             textBox8.ReadOnly = false;
         }
+
+        private void ControlAdmin_HS_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -70,9 +70,9 @@ namespace BTLDotNet
             }
         }
 
-        private void showPass_rbtn_CheckedChanged(object sender, EventArgs e)
+        private void showPass_chkbox_CheckedChanged(object sender, EventArgs e)
         {
-            if (showPass_rbtn.Checked == true)
+            if (showPass_chkbox.Checked == true)
             {
                 txt_password.UseSystemPasswordChar = false;
             }
