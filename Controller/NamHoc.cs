@@ -54,6 +54,16 @@ namespace Controller
                 return false;
             }
         }
+
+        public int GetYearID(string namHoc)
+        {
+            return dbContext.nam_hoc.Single(b => b.ten_nam_hoc.Equals(namHoc)).ma_nam;
+        }
+
+        public string GetYearName(int maNam)
+        {
+            return dbContext.nam_hoc.Single(b => b.ma_nam.Equals(maNam)).ten_nam_hoc;
+        }
     }
 }
     

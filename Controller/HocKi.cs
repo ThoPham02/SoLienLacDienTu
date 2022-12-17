@@ -14,6 +14,17 @@ namespace Controller
         {
             return dbContext.hoc_ki.ToList();
         }
+
+        public int GetSemesterID(string hocKy)
+        {
+            return dbContext.hoc_ki.Single(b => b.ten_hoc_ki.Equals(hocKy)).ma_hoc_ki;
+        }
+
+        public string GetSemesterName(int maHK)
+        {
+            return dbContext.hoc_ki.Single(b => b.ma_hoc_ki.Equals(maHK)).ten_hoc_ki;
+        }
+
         public bool CreateSemester(Model.EF.hoc_ki semester)
         {
             try
