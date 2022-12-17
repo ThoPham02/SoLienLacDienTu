@@ -34,6 +34,7 @@ namespace Model.EF
         public virtual DbSet<lop_hoc> lop_hoc { get; set; }
         public virtual DbSet<mon_hoc> mon_hoc { get; set; }
         public virtual DbSet<nam_hoc> nam_hoc { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<thoi_khoa_bieu> thoi_khoa_bieu { get; set; }
     }
 }

@@ -12,9 +12,20 @@ namespace BTLDotNet
 {
     public partial class ControlHS_TKB : UserControl
     {
+        Controller.ThoiKhoaBieu tkb = new Controller.ThoiKhoaBieu();
         public ControlHS_TKB()
         {
             InitializeComponent();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ControlHS_TKB_Load(object sender, EventArgs e)
+        {
+            tkb.Get
         }
     }
 }

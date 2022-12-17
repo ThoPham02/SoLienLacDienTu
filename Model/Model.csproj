@@ -92,6 +92,9 @@
     <Compile Include="EF\nam_hoc.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="EF\sysdiagrams.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
     <Compile Include="EF\thoi_khoa_bieu.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
