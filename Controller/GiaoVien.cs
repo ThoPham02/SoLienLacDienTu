@@ -62,7 +62,7 @@ namespace Controller
 
                 gv.ten = ten;
 
-                if(sdt.Length == 10) {  gv.sdt = sdt; }
+                if (sdt.Length == 10) { gv.sdt = sdt; }
                 else { return false; }
 
                 //Check hợp lệ ngày sinh
@@ -77,7 +77,7 @@ namespace Controller
 
                 //Check giới tính
                 if (gioitinh.Equals("Nữ")) { gv.gioiTinh = 0; }
-                else 
+                else
                 if (gioitinh.Equals("Nam")) { gv.gioiTinh = 1; }
                 else { return false; }
 
@@ -96,11 +96,15 @@ namespace Controller
             {
                 Model.EF.giao_vien gv = dbContext.giao_vien.Find(ma_gv);
 
-                if (gv.pass.Equals(oldPass) && gv.pass.Equals(confirmPass))
+                if (gv.pass.Equals(oldPass))
                 {
-                    gv.pass = newPass;
-                    dbContext.SaveChanges();
-                    return true;
+                    if (newPass.Equals(confirmPass))
+                    {
+                        gv.pass = newPass;
+                        dbContext.SaveChanges();
+                        return true;
+                    }
+                    return false;
                 }
 
                 return false;

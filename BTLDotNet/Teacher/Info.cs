@@ -85,7 +85,7 @@ namespace BTLDotNet.Teacher
 
             birth_txt.ReadOnly = name_txt.ReadOnly = phone_txt.ReadOnly = sex_txt.ReadOnly = true;
 
-            if(model.UpdateTeacher(Const.userID, name_txt.Text, birth_txt.Text, phone_txt.Text, sex_txt.Text))
+            if (model.UpdateTeacher(Const.userID, name_txt.Text, birth_txt.Text, phone_txt.Text, sex_txt.Text))
             {
                 MessageBox.Show("Cập nhật thông tin thành công!");
                 LoadData();
@@ -104,29 +104,11 @@ namespace BTLDotNet.Teacher
 
         }
 
-        private void showPass_rbtn_CheckedChanged(object sender, EventArgs e)
-        {
-            if (showPass_rbtn.Checked == true)
-            {
-                oldPass_txt.UseSystemPasswordChar =              
-                newPass_txt.UseSystemPasswordChar =
-                confirmPass_txt.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                oldPass_txt.UseSystemPasswordChar =
-                newPass_txt.UseSystemPasswordChar =
-                confirmPass_txt.UseSystemPasswordChar = true;
-            }
-
-
-        }
-
         private void changePass_btn_Click(object sender, EventArgs e)
         {
             GiaoVien model = new GiaoVien();
 
-            if(oldPass_txt.Text == "" || newPass_txt.Text == "" || confirmPass_txt.Text == "")
+            if (oldPass_txt.Text == "" || newPass_txt.Text == "" || confirmPass_txt.Text == "")
             {
                 oldPass_txt.Text = newPass_txt.Text = confirmPass_txt.Text = "";
                 oldPass_txt.Focus();
@@ -134,7 +116,7 @@ namespace BTLDotNet.Teacher
                 return;
             }
 
-            if(model.ChangePassword(Const.userID, oldPass_txt.Text, newPass_txt.Text, confirmPass_txt.Text))
+            if (model.ChangePassword(Const.userID, oldPass_txt.Text, newPass_txt.Text, confirmPass_txt.Text))
             {
                 oldPass_txt.Text = newPass_txt.Text = confirmPass_txt.Text = "";
                 MessageBox.Show("Đổi mật khẩu thành công!");
@@ -143,6 +125,22 @@ namespace BTLDotNet.Teacher
             {
                 oldPass_txt.Text = newPass_txt.Text = confirmPass_txt.Text = "";
                 MessageBox.Show("Mật khẩu không hợp lệ hoặc không chính xác!");
+            }
+        }
+
+        private void showPass_chkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (showPass_chkbox.Checked == true)
+            {
+                oldPass_txt.UseSystemPasswordChar =
+                newPass_txt.UseSystemPasswordChar =
+                confirmPass_txt.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                oldPass_txt.UseSystemPasswordChar =
+                newPass_txt.UseSystemPasswordChar =
+                confirmPass_txt.UseSystemPasswordChar = true;
             }
         }
     }
