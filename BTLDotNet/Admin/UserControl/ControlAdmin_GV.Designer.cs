@@ -37,9 +37,9 @@
             this.colSoDienThoai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.add_btn = new System.Windows.Forms.Button();
+            this.update_btn = new System.Windows.Forms.Button();
+            this.delete_btn = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -56,8 +56,8 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.refesh_btn = new System.Windows.Forms.Button();
+            this.search_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
@@ -138,38 +138,38 @@
             this.textBox1.TabIndex = 2;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // button1
+            // add_btn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1217, 409);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 60);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.add_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.add_btn.Location = new System.Drawing.Point(1222, 409);
+            this.add_btn.Name = "add_btn";
+            this.add_btn.Size = new System.Drawing.Size(160, 60);
+            this.add_btn.TabIndex = 3;
+            this.add_btn.Text = "Thêm";
+            this.add_btn.UseVisualStyleBackColor = true;
+            this.add_btn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // update_btn
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1073, 510);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(220, 60);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Cập nhật Thông tin";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.update_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update_btn.Location = new System.Drawing.Point(1062, 510);
+            this.update_btn.Name = "update_btn";
+            this.update_btn.Size = new System.Drawing.Size(220, 60);
+            this.update_btn.TabIndex = 4;
+            this.update_btn.Text = "Cập nhật Thông tin";
+            this.update_btn.UseVisualStyleBackColor = true;
+            this.update_btn.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // delete_btn
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(1419, 409);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(160, 60);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Xóa";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.delete_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete_btn.Location = new System.Drawing.Point(1419, 409);
+            this.delete_btn.Name = "delete_btn";
+            this.delete_btn.Size = new System.Drawing.Size(160, 60);
+            this.delete_btn.TabIndex = 5;
+            this.delete_btn.Text = "Xóa";
+            this.delete_btn.UseVisualStyleBackColor = true;
+            this.delete_btn.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox2
             // 
@@ -328,35 +328,35 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // button10
+            // refesh_btn
             // 
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(1025, 409);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(160, 60);
-            this.button10.TabIndex = 23;
-            this.button10.Text = "Làm mới";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.refesh_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refesh_btn.Location = new System.Drawing.Point(1025, 409);
+            this.refesh_btn.Name = "refesh_btn";
+            this.refesh_btn.Size = new System.Drawing.Size(160, 60);
+            this.refesh_btn.TabIndex = 23;
+            this.refesh_btn.Text = "Làm mới";
+            this.refesh_btn.UseVisualStyleBackColor = true;
+            this.refesh_btn.Click += new System.EventHandler(this.button10_Click);
             // 
-            // button11
+            // search_btn
             // 
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(1331, 510);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(220, 60);
-            this.button11.TabIndex = 24;
-            this.button11.Text = "Tìm kiếm";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.search_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_btn.Location = new System.Drawing.Point(1331, 510);
+            this.search_btn.Name = "search_btn";
+            this.search_btn.Size = new System.Drawing.Size(220, 60);
+            this.search_btn.TabIndex = 24;
+            this.search_btn.Text = "Tìm kiếm";
+            this.search_btn.UseVisualStyleBackColor = true;
+            this.search_btn.Click += new System.EventHandler(this.button11_Click);
             // 
             // ControlAdmin_GV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
+            this.Controls.Add(this.search_btn);
+            this.Controls.Add(this.refesh_btn);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
@@ -373,9 +373,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.delete_btn);
+            this.Controls.Add(this.update_btn);
+            this.Controls.Add(this.add_btn);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
@@ -397,9 +397,9 @@
         private System.Windows.Forms.ColumnHeader colSoDienThoai;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button add_btn;
+        private System.Windows.Forms.Button update_btn;
+        private System.Windows.Forms.Button delete_btn;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox3;
@@ -417,7 +417,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button refesh_btn;
+        private System.Windows.Forms.Button search_btn;
     }
 }

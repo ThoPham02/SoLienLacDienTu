@@ -15,7 +15,30 @@ namespace Controller
         {
             return dbContext.giao_vien.Single(b => b.ma_gv.Equals(maGv));
         }
-        public bool CreateTeacher(string ma_gv, string ten, string ngay_sinh, string sdt, byte gioitinh, string pass)
+        public List<Model.EF.giao_vien> GetTeacherByCondition(string ma_gv = "", string ten = "", string ngay_sinh = "", string sdt = "", int gioitinh = -1)
+        {
+            if (ngay_sinh != "")
+            {
+                var date = DateTime.Parse(ngay_sinh);
+                return dbContext.giao_vien
+                    .Where(db =>
+                        (ma_gv == "" || db.ma_gv == ma_gv)
+                        && (ten == "" || db.ten == ten)
+                        && (gioitinh == -1 || db.gioiTinh == gioitinh)
+                        && (ngay_sinh == "" || db.ngaySinh == date)
+                        && (sdt == "" || db.sdt == sdt))
+                    .ToList();
+            }
+            return dbContext.giao_vien
+            .Where(db =>
+                (ma_gv == "" || db.ma_gv == ma_gv)
+                && (ten == "" || db.ten == ten)
+                && (gioitinh == -1 || db.gioiTinh == gioitinh)
+                && (sdt == "" || db.sdt == sdt))
+            .ToList();
+        }
+
+        public bool CreateTeacher(string ma_gv, string ten, string ngay_sinh, string sdt, string gioitinh, string pass)
         {
             try
             {
@@ -23,7 +46,14 @@ namespace Controller
                 teacher.ma_gv = ma_gv;
                 teacher.ten = ten;
                 teacher.sdt = sdt;
-                teacher.gioiTinh = gioitinh;
+                if (gioitinh == "Nam")
+                {
+                    teacher.gioiTinh = 1;
+                }
+                else
+                {
+                    teacher.gioiTinh = 0;
+                }
                 teacher.ngaySinh = DateTime.Parse(ngay_sinh);
                 teacher.pass = pass;
                 dbContext.giao_vien.Add(teacher);

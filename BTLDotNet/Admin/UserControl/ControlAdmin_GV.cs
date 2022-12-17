@@ -25,14 +25,21 @@ namespace BTLDotNet
             listView1.Items.Clear();
             clearTextBox();
             var teachers = gv.GetTeacherList();
-            foreach(var teacher in teachers)
+            foreach (var teacher in teachers)
             {
                 ListViewItem item = new ListViewItem();
                 item.Text = teacher.ma_gv;
                 item.SubItems.Add(teacher.ten);
                 item.SubItems.Add(teacher.pass);
                 item.SubItems.Add(teacher.ngaySinh.ToString());
-                item.SubItems.Add(teacher.gioiTinh.ToString());
+                if (teacher.gioiTinh == 1)
+                {
+                    item.SubItems.Add("Nam");
+                }
+                else
+                {
+                    item.SubItems.Add("Nữ");
+                }
                 item.SubItems.Add(teacher.sdt);
                 listView1.Items.Add(item);
             };
@@ -61,23 +68,33 @@ namespace BTLDotNet
         private void button2_Click(object sender, EventArgs e)
         {
             string maGV = textBox1.Text;
+            var teacher = gv.GetTeacherByID(maGV);
             string ten = textBox2.Text;
             string pass = textBox3.Text;
-            DateTime ngaySinh = DateTime.Parse(textBox4.Text);
-            string gioiTinhStr = textBox5.Text;
-            byte gioiTinh;
-            if (gioiTinhStr == "Nam")
+            string ngaySinh = textBox4.Text;
+            string gioiTinh = textBox5.Text;
+            string sdt = textBox6.Text;
+
+            if (!gv.UpdateTeacher(maGV, ten, ngaySinh, sdt, gioiTinh))
             {
-                gioiTinh = 1;
-            } else if (gioiTinhStr == "Nữ")
-            {
-                gioiTinh = 0;
+                MessageBox.Show("Thông tin giáo viên không hợp lệ!");
             }
             else
             {
-                MessageBox.Show("Giới tính không hợp lệ!");
+                if (pass != teacher.pass)
+                {
+                    bool changePass = gv.ChangePassword(maGV, teacher.pass, pass, pass);
+                    if (changePass)
+                    {
+                        MessageBox.Show("Cập nhật thông tin giáo viên thành công!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thông tin giáo viên thành công!");
+                }
             }
-            string sdt = textBox6.Text;
+            LoadData();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -92,7 +109,22 @@ namespace BTLDotNet
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            string ma_gv = textBox1.Text;
+            string ten = textBox2.Text;
+            string pass = textBox3.Text;
+            string ngaySinh = textBox4.Text;
+            string gioiTinh = textBox5.Text;
+            string sdt = textBox6.Text;
+            bool check = gv.CreateTeacher(ma_gv, ten, ngaySinh, sdt, gioiTinh, pass);
+            if (check)
+            {
+                MessageBox.Show("Thêm giáo viên thành công!");
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Thông tin giáo viên không hợp lệ!");
+            }
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,7 +133,8 @@ namespace BTLDotNet
             if (teacher.Count == 0)
             {
                 return;
-            }else
+            }
+            else
             {
                 textBox1.Text = teacher[0].SubItems[0].Text;
                 textBox2.Text = teacher[0].SubItems[1].Text;
@@ -154,12 +187,71 @@ namespace BTLDotNet
 
         private void button11_Click(object sender, EventArgs e)
         {
+            listView1.Items.Clear();
+            string ma_gv = textBox1.Text;
+            string ten = textBox2.Text;
+            string ngaySinh = textBox4.Text;
 
+            if (ngaySinh != "")
+            {
+                _ = DateTime.Parse(ngaySinh);
+            }
+            string gioiTinhStr = textBox5.Text;
+            int gioiTinh;
+            if (gioiTinhStr == "Nam")
+            {
+                gioiTinh = 1;
+            }
+            else if (gioiTinhStr == "Nữ")
+            {
+                gioiTinh = 0;
+            }
+            else
+            {
+                gioiTinh = -1;
+            }
+
+            string sdt = textBox6.Text;
+            var teachers = gv.GetTeacherByCondition(ma_gv, ten, ngaySinh, sdt, gioiTinh);
+            foreach (var teacher in teachers)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = teacher.ma_gv;
+                item.SubItems.Add(teacher.ten);
+                item.SubItems.Add(teacher.pass);
+                item.SubItems.Add(teacher.ngaySinh.ToString());
+                if (teacher.gioiTinh == 1)
+                {
+                    item.SubItems.Add("Nam");
+                }
+                else
+                {
+                    item.SubItems.Add("Nữ");
+                }
+                item.SubItems.Add(teacher.sdt);
+                listView1.Items.Add(item);
+            };
+            MessageBox.Show("Kết quả tìm kiếm!");
+
+            /*}
+            catch
+            {
+                MessageBox.Show("Ngày sinh không hợp lệ");
+            }*/
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            string ma_gv = textBox1.Text;
+            if (gv.DeleteTeacher(ma_gv))
+            {
+                MessageBox.Show("Xóa giáo viên thành công!");
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Xóa giáo viên không hợp lệ!");
+            }
         }
     }
 }
