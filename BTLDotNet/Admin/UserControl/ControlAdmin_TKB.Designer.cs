@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
-            this.colMaGv = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colMaMonHoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colMaGv = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colMaLop = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colTiet = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.colTiet = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView1
@@ -66,6 +66,13 @@
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // colMaMonHoc
+            // 
+            this.colMaMonHoc.DisplayIndex = 1;
+            this.colMaMonHoc.Text = "Mã Môn Học";
+            this.colMaMonHoc.Width = 120;
             // 
             // colMaGv
             // 
@@ -74,17 +81,17 @@
             this.colMaGv.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colMaGv.Width = 120;
             // 
-            // colMaMonHoc
-            // 
-            this.colMaMonHoc.DisplayIndex = 1;
-            this.colMaMonHoc.Text = "Mã Môn Học";
-            this.colMaMonHoc.Width = 120;
-            // 
             // colMaLop
             // 
             this.colMaLop.Text = "Mã lớp";
             this.colMaLop.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colMaLop.Width = 120;
+            // 
+            // colTiet
+            // 
+            this.colTiet.Text = "Tiết";
+            this.colTiet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colTiet.Width = 120;
             // 
             // textBox1
             // 
@@ -228,6 +235,7 @@
             this.button10.TabIndex = 28;
             this.button10.Text = "Làm mới";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button8
             // 
@@ -238,12 +246,7 @@
             this.button8.TabIndex = 27;
             this.button8.Text = "Cập nhật Thông tin";
             this.button8.UseVisualStyleBackColor = true;
-            // 
-            // colTiet
-            // 
-            this.colTiet.Text = "Tiết";
-            this.colTiet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colTiet.Width = 120;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // ControlAdmin_TKB
             // 

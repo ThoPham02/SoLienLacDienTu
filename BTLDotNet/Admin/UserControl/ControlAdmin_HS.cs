@@ -17,7 +17,6 @@ namespace BTLDotNet
         {
             InitializeComponent();
             LoadData();
-
         }
         public void LoadData()
         {
@@ -42,7 +41,6 @@ namespace BTLDotNet
             listView1.MultiSelect = false;
 
         }
-
         public void clearTextBox()
         {
             textBox1.Text = "";
@@ -63,10 +61,11 @@ namespace BTLDotNet
             textBox7.ReadOnly = true;
             textBox8.ReadOnly = true;
 
+
         }
         private void button12_Click(object sender, EventArgs e)
         {
-            string mahs = textBox1.Text;
+            string maHS = textBox1.Text;
             string pass = textBox2.Text;
             string ten = textBox3.Text;
             DateTime ngaySinh = DateTime.Parse(textBox4.Text);
@@ -85,21 +84,22 @@ namespace BTLDotNet
                 MessageBox.Show("Giới tính không hợp lệ!");
             }
             string khoa = textBox6.Text;
+
             string sdt = textBox7.Text;
             string trangthai = textBox8.Text;
+
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
-
-
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
         private void button1_Click(object sender, EventArgs e)
         {
+
 
         }
 
@@ -120,13 +120,47 @@ namespace BTLDotNet
                 textBox6.Text = student[0].SubItems[5].Text;
                 textBox7.Text = student[0].SubItems[6].Text;
                 textBox8.Text = student[0].SubItems[7].Text;
-
             }
-
         }
         private void button2_Click(object sender, EventArgs e)
         {
             LoadData();
+        }
+        private void button11_Click(object sender, EventArgs e)
+        {
+            textBox1.ReadOnly = false;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            textBox2.ReadOnly = false;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            textBox3.ReadOnly = false;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            textBox4.ReadOnly = false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox5.ReadOnly = false;
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox6.ReadOnly = false;
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            textBox7.ReadOnly = false;
+        }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            textBox8.ReadOnly = false;
         }
     }
 }

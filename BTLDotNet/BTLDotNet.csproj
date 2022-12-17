@@ -219,6 +219,12 @@
     <EmbeddedResource Include="Admin\UserControl\ControlAdmin_Header.resx">
       <DependentUpon>ControlAdmin_Header.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UserControl\ControlAdmin_HK.resx">
+      <DependentUpon>ControlAdmin_HK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UserControl\ControlAdmin_HocKi.resx">
+      <DependentUpon>ControlAdmin_HocKi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\UserControl\ControlAdmin_HS.resx">
       <DependentUpon>ControlAdmin_HS.cs</DependentUpon>
     </EmbeddedResource>
