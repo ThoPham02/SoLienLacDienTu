@@ -59,13 +59,21 @@ namespace Controller
 
         public Model.EF.bao_cao GetReportByStudentAndYear(string maHs, int maHocKi, int maNam)
         {
-            return 
-                dbContext.bao_cao.
+            Model.EF.bao_cao baoCao = new Model.EF.bao_cao()
+            {
+                
+            };
+            var listBaoCao =    dbContext.bao_cao.
                 Where(baocao => 
                     baocao.ma_hs == maHs 
                     && baocao.ma_hoc_ki == maHocKi 
                     && baocao.ma_nam == maNam).
-                ToList()[0];
+                ToList();
+            if(listBaoCao.Count > 0 )
+            {
+                baoCao = listBaoCao[0];
+            }
+            return baoCao;
         }
     }
 }

@@ -68,9 +68,15 @@ namespace Controller
             return true;
         }
 
-        public List<Model.EF.diem_kt> GetScoreByStudentAndSubject(string maHs, int maMon)
+        public List<Model.EF.diem_kt> GetScoreByCondition(string maHs, int maMon, int maHocKi, int maNamHoc)
         {
-            return dbContext.diem_kt.Where(diem => diem.ma_hs == maHs && diem.ma_mon == maMon).ToList();
+            return dbContext.diem_kt
+                .Where(diem =>
+                    diem.ma_hs == maHs
+                    && diem.ma_mon == maMon
+                    && diem.ma_hoc_ki == maHocKi
+                    && diem.ma_nam == maNamHoc)
+                .ToList();
         }
     }
 }

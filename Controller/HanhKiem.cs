@@ -14,6 +14,10 @@ namespace Controller
         {
             return dbContext.hanh_kiem.ToList();
         }
+
+        public string GetConductName(int maHanhKiem) {
+            return dbContext.hanh_kiem.Single(b => b.ma_hanh_kiem.Equals(maHanhKiem)).loai;
+        }
         public bool CreateConduct(Model.EF.hanh_kiem conduct)
         {
             try
