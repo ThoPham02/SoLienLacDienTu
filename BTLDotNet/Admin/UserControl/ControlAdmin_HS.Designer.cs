@@ -79,6 +79,7 @@
             this.colKhoa,
             this.colSĐT,
             this.colTrangThai});
+            this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(25, 25);
             this.listView1.Name = "listView1";
