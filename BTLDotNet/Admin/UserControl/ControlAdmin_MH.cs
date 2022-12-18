@@ -104,7 +104,7 @@ namespace BTLDotNet
             string tenMon = textBox2.Text;
             if (mh.CreateSubjects(tenMon))
             {
-                MessageBox.Show("Cập nhật môn học thành công!");
+                MessageBox.Show("Thêm môn học thành công!");
                 LoadData();
             }
             else
