@@ -18,11 +18,11 @@ namespace BTLDotNet
         public ControlAdmin_TKB()
         {
             InitializeComponent();
+            clearTextBox();
             LoadData();
         }
         public void LoadData()
         {
-            clearTextBox();
             var schedules = tkb.GetScheduleList();
             LoadListView(schedules);
         }
@@ -147,7 +147,7 @@ namespace BTLDotNet
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 int maMH = int.Parse(textBox1.Text);
                 string maGV = textBox2.Text;
@@ -168,7 +168,7 @@ namespace BTLDotNet
             catch
             {
                 MessageBox.Show("Thông tin thời khóa biểu không hợp lệ!");
-            }
+            }*/
         }
 
         private void button11_Click(object sender, EventArgs e)

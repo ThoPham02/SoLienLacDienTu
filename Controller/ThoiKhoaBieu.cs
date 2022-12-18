@@ -46,7 +46,7 @@ namespace Controller
         {
             try
             {
-                var schedule = dbContext.thoi_khoa_bieu.First(db => db.ma_mon == maMh && db.ma_gv == maGv && db.ma_lop == maLop && db.ma_hoc_ki == maHocKi && db.ma_nam_hoc == maNam);
+                var schedule = dbContext.thoi_khoa_bieu.First(db => db.ma_mon == maMh && db.ma_gv == maGv && db.tiet == tiet &&db.ma_lop == maLop && db.ma_hoc_ki == maHocKi && db.ma_nam_hoc == maNam);
                 dbContext.thoi_khoa_bieu.Remove(schedule);
                 dbContext.SaveChanges();
                 return true;
@@ -59,17 +59,6 @@ namespace Controller
 
         public bool UpdateSchedule(int maMh, string maGv, int maLop, int tiet, int maHocKi, int maNam)
         {
-            try
-            {
-                var schedules = dbContext.thoi_khoa_bieu.First(db => db.ma_mon == maMh && db.ma_gv == maGv && db.ma_lop == maLop && db.ma_hoc_ki == maHocKi && db.ma_nam_hoc == maNam);
-                if(schedules == null ) { return false; }
-                schedules.tiet = tiet;
-                dbContext.SaveChanges();
-            }
-            catch (Exception)
-            {
-                return false;
-            }
             return true;
         }
     }
