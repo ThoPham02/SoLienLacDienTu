@@ -13,10 +13,13 @@ namespace BTLDotNet.Teacher
 {
     public partial class Report : Form
     {
+        NamHoc namHocCtrl = new NamHoc();
+        HocKi hocKyCtrl = new HocKi();
+
         public Report()
         {
             InitializeComponent();
-
+            LoadCbox();
         }
 
         public void LoadData()
@@ -41,6 +44,24 @@ namespace BTLDotNet.Teacher
             {
                 sex_txt.Text = "Nữ";
             }
+        }
+
+        public void LoadCbox()
+        {
+            var years = namHocCtrl.GetYearList();
+            foreach (var year in years)
+            {
+                addYear_cbox.Items.Add(year.ten_nam_hoc);
+                yearSearch_cbox.Items.Add(year.ten_nam_hoc);
+            }
+            
+            var semesters = hocKyCtrl.GetSemesterList();
+            foreach (var semester in semesters)
+            {
+                addSemester_cbox.Items.Add(semester.ten_hoc_ki);
+                semesterSearch_cbox.Items.Add(semester.ten_hoc_ki);
+            }
+
         }
 
         private void label1_Click(object sender, EventArgs e)

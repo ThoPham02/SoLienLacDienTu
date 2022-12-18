@@ -67,10 +67,10 @@ namespace BTLDotNet.Teacher
             this.label7 = new System.Windows.Forms.Label();
             this.edit_btn = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.searchID_btn = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.searchID_txt = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -97,9 +97,6 @@ namespace BTLDotNet.Teacher
             // 
             this.addSemester_cbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addSemester_cbox.FormattingEnabled = true;
-            this.addSemester_cbox.Items.AddRange(new object[] {
-            "1",
-            "2"});
             this.addSemester_cbox.Location = new System.Drawing.Point(543, 61);
             this.addSemester_cbox.Name = "addSemester_cbox";
             this.addSemester_cbox.Size = new System.Drawing.Size(166, 24);
@@ -109,11 +106,6 @@ namespace BTLDotNet.Teacher
             // 
             this.addYear_cbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addYear_cbox.FormattingEnabled = true;
-            this.addYear_cbox.Items.AddRange(new object[] {
-            "2018-2019",
-            "2019-2020",
-            "2020-2021",
-            "2022-2023"});
             this.addYear_cbox.Location = new System.Drawing.Point(543, 94);
             this.addYear_cbox.Name = "addYear_cbox";
             this.addYear_cbox.Size = new System.Drawing.Size(166, 24);
@@ -342,9 +334,6 @@ namespace BTLDotNet.Teacher
             // 
             this.semesterSearch_cbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.semesterSearch_cbox.FormattingEnabled = true;
-            this.semesterSearch_cbox.Items.AddRange(new object[] {
-            "1",
-            "2"});
             this.semesterSearch_cbox.Location = new System.Drawing.Point(103, 26);
             this.semesterSearch_cbox.Name = "semesterSearch_cbox";
             this.semesterSearch_cbox.Size = new System.Drawing.Size(166, 24);
@@ -354,11 +343,6 @@ namespace BTLDotNet.Teacher
             // 
             this.yearSearch_cbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.yearSearch_cbox.FormattingEnabled = true;
-            this.yearSearch_cbox.Items.AddRange(new object[] {
-            "2018-2019",
-            "2019-2020",
-            "2020-2021",
-            "2022-2023"});
             this.yearSearch_cbox.Location = new System.Drawing.Point(103, 59);
             this.yearSearch_cbox.Name = "yearSearch_cbox";
             this.yearSearch_cbox.Size = new System.Drawing.Size(166, 24);
@@ -502,6 +486,16 @@ namespace BTLDotNet.Teacher
             this.panel5.Size = new System.Drawing.Size(425, 232);
             this.panel5.TabIndex = 28;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(149, -3);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(138, 17);
+            this.label13.TabIndex = 28;
+            this.label13.Text = "Tìm kiếm học sinh";
+            // 
             // searchID_btn
             // 
             this.searchID_btn.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -532,16 +526,6 @@ namespace BTLDotNet.Teacher
             this.searchID_txt.Size = new System.Drawing.Size(166, 23);
             this.searchID_txt.TabIndex = 25;
             this.searchID_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(149, -3);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(138, 17);
-            this.label13.TabIndex = 28;
-            this.label13.Text = "Tìm kiếm học sinh";
             // 
             // Report
             // 

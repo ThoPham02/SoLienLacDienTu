@@ -37,13 +37,13 @@ namespace Controller
                 dbContext.bao_cao.Add(bc);
                 try
                 {
-                      dbContext.SaveChanges();
+                    dbContext.SaveChanges();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
                 }
-                
+
                 return true;
             }
             catch (Exception)
@@ -71,17 +71,17 @@ namespace Controller
                 return false;
             }
         }
-        public List<Model.EF.bao_cao> GetReportByCondition(int id, string maHs,float diemTk, int maHanhKiem, string nx, int maHocKi, int maNam)
+        public List<Model.EF.bao_cao> GetReportByCondition(int id, string maHs, float diemTk, int maHanhKiem, string nx, int maHocKi, int maNam)
         {
             return dbContext.bao_cao
                 .Where(db =>
                     (id == 0 || db.id == id)
-                    &&(maHs == "" || db.ma_hs == maHs)
-                    &&(diemTk == -1 || db.diem_tong_ket == diemTk)
-                    &&(maHanhKiem == 0 || db.ma_hanh_kiem == maHanhKiem)
-                    &&(nx == "" || db.nhan_xet == nx)
-                    &&(maHocKi == 0 || db.ma_hoc_ki == maHocKi)
-                    &&(maNam == 0 || db.ma_nam == maNam))
+                    && (maHs == "" || db.ma_hs == maHs)
+                    && (diemTk == -1 || db.diem_tong_ket == diemTk)
+                    && (maHanhKiem == 0 || db.ma_hanh_kiem == maHanhKiem)
+                    && (nx == "" || db.nhan_xet == nx)
+                    && (maHocKi == 0 || db.ma_hoc_ki == maHocKi)
+                    && (maNam == 0 || db.ma_nam == maNam))
                 .ToList();
         }
         public bool DeleteReport(int id)
@@ -99,11 +99,17 @@ namespace Controller
             }
         }
 
-        public bool UpdateReport(Model.EF.bao_cao report)
+        public bool UpdateReport(int id, string maHs, int maHanhKiem, float diemTK, string nx, int maHocKi, int maNam)
         {
             try
             {
-                dbContext.bao_cao.AddOrUpdate(report);
+                var report = dbContext.bao_cao.Find(id);
+                report.ma_hs = maHs;
+                report.ma_hanh_kiem = maHanhKiem;
+                report.diem_tong_ket = diemTK;
+                report.nhan_xet = nx;
+                report.ma_hoc_ki = maHocKi;
+                report.ma_nam = maNam;
                 dbContext.SaveChanges();
                 return true;
             }

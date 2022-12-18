@@ -144,5 +144,21 @@ namespace Controller
                 return false;
             }
         }
+
+        public List<Model.EF.thoi_khoa_bieu> GetScheduleTeacher(string maGiaoVien, int maNamHoc, int maHocKy)
+        {
+            try
+            {
+                var sched = from c in dbContext.thoi_khoa_bieu
+                            where c.ma_gv.Equals(maGiaoVien) && c.ma_nam_hoc.Equals(maNamHoc) && c.ma_hoc_ki.Equals(maHocKy)
+                            select c;
+
+                return sched.ToList();
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }

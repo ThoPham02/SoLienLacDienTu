@@ -66,5 +66,10 @@ namespace Controller
                 return false;
             }
         }
+
+        public string GetClassNameByID(int maLop)
+        {
+            return dbContext.lop_hoc.Single(c => c.ma_lop == maLop).ten;
+        }
     }
 }
