@@ -68,7 +68,6 @@ namespace BTLDotNet
             if (schedule.Count == 0)
             {
                 return;
-
             }
             else
             {

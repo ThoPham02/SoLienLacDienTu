@@ -74,7 +74,6 @@ namespace BTLDotNet.Teacher
         private void button1_Click(object sender, EventArgs e)
         {
             LopHoc lpCtrl = new LopHoc();
-            HocSinh hsCtrl = new HocSinh();
             Model.EF.hoc_sinh hs = new Model.EF.hoc_sinh();
 
             var students = lpCtrl.GetClassListByTeacherID(Const.userID);
