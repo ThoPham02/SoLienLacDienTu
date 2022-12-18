@@ -109,7 +109,7 @@ namespace BTLDotNet.Teacher
                 }
                 catch (Exception)
                 {
-                    id_txt.Text = name_txt.Text = birth_txt.Text = sex_txt.Text = "";
+                    id_txt.Text = name_txt.Text = hanhKiem_txt.Text = birth_txt.Text = sex_txt.Text = year_txt.Text = semester_txt.Text = "";
                     MessageBox.Show("Tìm kiếm không hợp lệ hoặc không có dữ liệu tồn tại!");
                 }
 
@@ -123,17 +123,25 @@ namespace BTLDotNet.Teacher
         private void add_btn_Click(object sender, EventArgs e)
         {
             BaoCao ctrlBC = new BaoCao();
-            if (id_txt.Text == "") { MessageBox.Show("Chưa tìm kiếm học sinh!"); }
+            NamHoc ctrlNH = new NamHoc();
+            HocKi ctrlHKi = new HocKi();
+            HanhKiem ctrlHKiem = new HanhKiem();
+
+            //Xử lý dữ liệu
+            int maNamHoc = addYear_cbox.SelectedIndex + 1;
+            int maHocKi = addSemester_cbox.SelectedIndex + 1;
+            int maHanhKiem = hanhKiem_cbox.SelectedIndex + 1;
+
             try
             {
                 bool check = ctrlBC.CreateReport(
                    id_txt.Text,
-                   hanhKiem_cbox.Text,
+                   maHanhKiem,
                    comment_rtxt.Text,
-                   semesterSearch_cbox.SelectedItem.ToString(),
-                   yearSearch_cbox.SelectedItem.ToString()
+                   maHocKi,
+                   maNamHoc
                );
-                if (check == true) { MessageBox.Show("Thêm báo cáo thành công!"); }
+                if (check == true) { MessageBox.Show("Thêm thành công!"); }
                 else { MessageBox.Show("Lỗi! Kiểm tra lại thông tin."); }
             }
             catch
@@ -150,6 +158,64 @@ namespace BTLDotNet.Teacher
         private void edit_btn_Click(object sender, EventArgs e)
         {
             BaoCao ctrlBC = new BaoCao();
+
+            int maHanhKiem = hanhKiem_cbox.SelectedIndex + 1;
+            int maHocKi = semesterSearch_cbox.SelectedIndex + 1;
+            int maNamHoc = yearSearch_cbox.SelectedIndex + 1;
+
+            bool check = ctrlBC.UpdateReport(
+                id_txt.Text,
+                maHocKi,
+                maNamHoc,
+                maHanhKiem,
+                comment_rtxt.Text
+                );
+
+            if (check == true) { MessageBox.Show("Cập nhật thành công!"); }
+            else { MessageBox.Show("Lỗi! Kiểm tra lại thông tin."); }
+        }
+
+        private void searchID_btn_Click(object sender, EventArgs e)
+        {
+            HocSinh ctrlHS = new HocSinh();
+            var hs = ctrlHS.GetStudentByID(searchID_txt.Text);
+
+            //clear info
+            id_txt.Text =
+            name_txt.Text =
+            hanhKiem_txt.Text =
+            birth_txt.Text =
+            sex_txt.Text =
+            year_txt.Text =
+            semester_txt.Text =
+            comment_rtxt.Text = "";
+
+            //clear search
+            semesterSearch_cbox.Text =
+            yearSearch_cbox.Text =
+            search_txt.Text = "";
+
+            if (hs != null)
+            {
+                DateTime birth = Convert.ToDateTime(hs.ngaySinh);
+
+                id_txt.Text = hs.ma_hs;
+                name_txt.Text = hs.ten;
+                birth_txt.Text = birth.ToString("dd/MM/yyyy");
+
+                if (hs.gioiTinh == 1)
+                {
+                    sex_txt.Text = "Nam";
+                }
+                else
+                {
+                    sex_txt.Text = "Nữ";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy học sinh.");
+            }
         }
     }
 }

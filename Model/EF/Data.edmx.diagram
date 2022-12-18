@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="431320b20bf84948b1e8ea2c70920619" Name="Diagram1">
-        <EntityTypeShape EntityType="SoLienLacDienTuModel.bao_cao" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SoLienLacDienTuModel.bao_cao" Width="1.5" PointX="3.875" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SoLienLacDienTuModel.chi_tiet_lop_hoc" Width="1.5" PointX="3" PointY="17.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SoLienLacDienTuModel.diem_kt" Width="1.5" PointX="6" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SoLienLacDienTuModel.giao_vien" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
