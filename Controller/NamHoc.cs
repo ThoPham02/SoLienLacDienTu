@@ -14,10 +14,20 @@ namespace Controller
         {
             return dbContext.nam_hoc.ToList();
         }
-        public bool CreateYear(Model.EF.nam_hoc year)
+        public List<Model.EF.nam_hoc> SearchYear(int maNam, string tenNam)
+        {
+            return dbContext.nam_hoc
+                .Where(db => (maNam == -1 || db.ma_nam == maNam) && (tenNam == "" || db.ten_nam_hoc == tenNam))
+                .ToList();
+        }
+        public bool CreateYear(string tenNam)
         {
             try
             {
+                var year = new Model.EF.nam_hoc()
+                {
+                    ten_nam_hoc = tenNam
+                };
                 dbContext.nam_hoc.Add(year);
                 dbContext.SaveChanges();
                 return true;
@@ -27,10 +37,11 @@ namespace Controller
                 return false;
             }
         }
-        public bool DeleteYear(Model.EF.nam_hoc year)
+        public bool DeleteYear(int maNam)
         {
             try
             {
+                var year = dbContext.nam_hoc.Find(maNam);
                 dbContext.nam_hoc.Remove(year);
                 dbContext.SaveChanges();
                 return true;
@@ -41,11 +52,12 @@ namespace Controller
             }
         }
 
-        public bool UpdateYear(Model.EF.nam_hoc year)
+        public bool UpdateYear(int maNam, string tenNam)
         {
             try
             {
-                dbContext.nam_hoc.AddOrUpdate(year);
+                var nh = dbContext.nam_hoc.Find(maNam);
+                nh.ten_nam_hoc = tenNam;
                 dbContext.SaveChanges();
                 return true;
             }

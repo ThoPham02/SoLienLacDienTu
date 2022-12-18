@@ -21,9 +21,13 @@ namespace BTLDotNet
         }
         public void LoadData()
         {
-            listView1.Items.Clear();
             clearTextBox();
             var years = nh.GetYearList();
+            loadListView(years);
+        }
+        public void loadListView(List<Model.EF.nam_hoc> years)
+        {
+            listView1.Items.Clear();
             foreach (var year in years)
             {
                 ListViewItem item = new ListViewItem();
@@ -34,7 +38,6 @@ namespace BTLDotNet
 
             listView1.FullRowSelect = true;
             listView1.MultiSelect = false;
-
         }
         public void clearTextBox()
         {
@@ -47,7 +50,24 @@ namespace BTLDotNet
         }
         private void button3_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                int maNH = int.Parse(textBox1.Text);
+                string namhoc = textBox2.Text;
+                if (nh.DeleteYear(maNH))
+                {
+                    MessageBox.Show("Xóa năm học thành công!");
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin năm học không hợp lệ!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Thông tin năm học không hợp lệ!");
+            }
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,8 +92,23 @@ namespace BTLDotNet
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string maNH = textBox1.Text;
-            string namhoc = textBox2.Text;
+            try
+            {
+                int maNH = int.Parse(textBox1.Text);
+                string namhoc = textBox2.Text;
+                if (nh.UpdateYear(maNH, namhoc))
+                {
+                    MessageBox.Show("Cập nhật năm học thành công!");
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin năm học không hợp lệ!");
+                }
+            } catch
+            {
+                MessageBox.Show("Thông tin năm học không hợp lệ!");
+            }
         }
         private void button5_Click(object sender, EventArgs e)
         {
@@ -91,7 +126,59 @@ namespace BTLDotNet
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int maNH = int.Parse(textBox1.Text);
+                string namhoc = textBox2.Text;
+                if (nh.CreateYear(namhoc))
+                {
+                    MessageBox.Show("Thêm năm học thành công!");
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin năm học không hợp lệ!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Thông tin năm học không hợp lệ!");
+            }
+        }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int maNH = int.Parse(textBox1.Text);
+                string namhoc = textBox2.Text;
+                var years = nh.SearchYear(maNH, namhoc);
+                MessageBox.Show("Kết quả tìm kiếm!");
+                if (years == null)
+                {
+                    return;
+                }
+                else
+                {
+                    loadListView(years);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Thông tin năm học không hợp lệ!");
+            }
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            textBox1.ReadOnly = false;
+            textBox1.Focus();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            textBox2.ReadOnly = false;
+            textBox2.Focus();
         }
     }
 }
