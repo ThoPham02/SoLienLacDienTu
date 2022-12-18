@@ -163,7 +163,7 @@ namespace BTLDotNet.Teacher
             int maHocKi = semesterSearch_cbox.SelectedIndex + 1;
             int maNamHoc = yearSearch_cbox.SelectedIndex + 1;
 
-            bool check = ctrlBC.UpdateReport(
+            bool check = ctrlBC.UpdateReportTeacher(
                 id_txt.Text,
                 maHocKi,
                 maNamHoc,

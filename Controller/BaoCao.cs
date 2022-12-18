@@ -64,7 +64,7 @@ namespace Controller
             }
         }
 
-        public bool UpdateReport(string maHS, int maHocKi, int maNamHoc, int maHanhKiem, string nhanXet)
+        public bool UpdateReportTeacher(string maHS, int maHocKi, int maNamHoc, int maHanhKiem, string nhanXet)
         {
             try
             {
