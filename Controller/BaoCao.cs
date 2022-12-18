@@ -64,7 +64,7 @@ namespace Controller
             }
         }
 
-        public bool UpdateReportTeacher(string maHS, int maHocKi, int maNamHoc, int maHanhKiem, string nhanXet)
+        public bool UpdateReport(string maHS, int maHocKi, int maNamHoc, int maHanhKiem, string nhanXet)
         {
             try
             {
@@ -100,6 +100,25 @@ namespace Controller
                 baoCao = listBaoCao[0];
             }
             return baoCao;
+        }
+
+        public bool UpdateReportTeacher(string maHS, int maHocKi, int maNamHoc, int maHanhKiem, string nhanXet)
+        {
+            try
+            {
+                Model.EF.bao_cao bc = GetReportByStudentAndYear(maHS, maHocKi, maNamHoc);
+
+                bc.ma_hanh_kiem = maHanhKiem;
+                bc.nhan_xet = nhanXet;
+
+                dbContext.bao_cao.AddOrUpdate(bc);
+                dbContext.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }
