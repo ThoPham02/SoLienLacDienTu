@@ -188,7 +188,7 @@ namespace BTLDotNet
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-
+            LoadData();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -258,6 +258,7 @@ namespace BTLDotNet
             if(hs.DeleteStudent(maHS))
             {
                 MessageBox.Show("Xóa học sinh thành công!");
+                LoadData();
             }
             else
             {
