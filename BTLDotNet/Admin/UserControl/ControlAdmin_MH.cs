@@ -55,7 +55,6 @@ namespace BTLDotNet
             {
                 textBox1.Text = teacher[0].SubItems[0].Text;
                 textBox2.Text = teacher[0].SubItems[1].Text;
-               
             }
         }
 

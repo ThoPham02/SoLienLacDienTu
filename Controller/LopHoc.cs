@@ -26,10 +26,24 @@ namespace Controller
                 return null;
             }
         }
-        public bool CreateClass(Model.EF.lop_hoc clas)
+        public List<Model.EF.lop_hoc> SearchClass(int maLop, string tenLop, string maGv)
+        {
+            return dbContext.lop_hoc
+                .Where(db => (maLop == -1 || db.ma_lop == maLop)
+                            && (tenLop == "" || db.ten == tenLop)
+                            && (maGv == "" || db.ma_gv == maGv))
+                .ToList();
+        }
+
+        public bool CreateClass(string tenLop, string maGv)
         {
             try
             {
+                Model.EF.lop_hoc clas = new Model.EF.lop_hoc()
+                {
+                    ten = tenLop,
+                    ma_gv = maGv
+                };
                 dbContext.lop_hoc.Add(clas);
                 dbContext.SaveChanges();
                 return true;
@@ -39,10 +53,11 @@ namespace Controller
                 return false;
             }
         }
-        public bool DeleteClass(Model.EF.lop_hoc clas)
+        public bool DeleteClass(int maLop)
         {
             try
             {
+                Model.EF.lop_hoc clas = dbContext.lop_hoc.Find(maLop);
                 dbContext.lop_hoc.Remove(clas);
                 dbContext.SaveChanges();
                 return true;
@@ -53,11 +68,14 @@ namespace Controller
             }
         }
 
-        public bool UpdateClass(Model.EF.lop_hoc clas)
+        public bool UpdateClass(int maLop, string tenLop, string maGv)
         {
             try
             {
-                dbContext.lop_hoc.AddOrUpdate(clas);
+
+                var lop = dbContext.lop_hoc.Find(maLop);
+                lop.ten = tenLop;
+                lop.ma_gv = maGv;
                 dbContext.SaveChanges();
                 return true;
             }
