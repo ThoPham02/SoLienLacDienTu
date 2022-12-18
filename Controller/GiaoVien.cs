@@ -150,7 +150,7 @@ namespace Controller
             try
             {
                 var sched = from c in dbContext.thoi_khoa_bieu
-                            where c.ma_gv.Equals(maGiaoVien) && c.ma_nam_hoc.Equals(maNamHoc) && c.ma_hoc_ki.Equals(maHocKy)
+                            where c.ma_gv.Equals(maGiaoVien) && c.ma_nam_hoc == maNamHoc && c.ma_hoc_ki == maHocKy
                             select c;
 
                 return sched.ToList();
