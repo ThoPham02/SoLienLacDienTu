@@ -20,9 +20,13 @@ namespace BTLDotNet
         }
         public void LoadData()
         {
-            listView1.Items.Clear();
             clearTextBox();
             var students = hs.GetStudentList();
+            LoadListView(students);
+        }
+        public void LoadListView(List<Model.EF.hoc_sinh> students)
+        {
+            listView1.Items.Clear();
             foreach (var student in students)
             {
                 ListViewItem item = new ListViewItem();
@@ -30,7 +34,14 @@ namespace BTLDotNet
                 item.SubItems.Add(student.pass);
                 item.SubItems.Add(student.ten);
                 item.SubItems.Add(student.ngaySinh.ToString());
-                item.SubItems.Add(student.gioiTinh.ToString());
+                if (student.gioiTinh == 0)
+                {
+                    item.SubItems.Add("Nữ");
+                }
+                else
+                {
+                    item.SubItems.Add("Nam");
+                }
                 item.SubItems.Add(student.khoa.ToString());
                 item.SubItems.Add(student.sdt);
                 item.SubItems.Add(student.trang_thai);
@@ -39,7 +50,6 @@ namespace BTLDotNet
 
             listView1.FullRowSelect = true;
             listView1.MultiSelect = false;
-
         }
         public void clearTextBox()
         {
@@ -65,28 +75,30 @@ namespace BTLDotNet
         }
         private void button12_Click(object sender, EventArgs e)
         {
-            string maHS = textBox1.Text;
-            string pass = textBox2.Text;
-            string ten = textBox3.Text;
-            DateTime ngaySinh = DateTime.Parse(textBox4.Text);
-            string gioiTinhStr = textBox5.Text;
-            byte gioiTinh;
-            if (gioiTinhStr == "Nam")
+            try
             {
-                gioiTinh = 1;
+                string maHS = textBox1.Text;
+                string pass = textBox2.Text;
+                string ten = textBox3.Text;
+                string ngaySinh = textBox4.Text;
+                string gioiTinh = textBox5.Text;
+                string khoa = textBox6.Text;
+                string sdt = textBox7.Text;
+                string trangthai = textBox8.Text;
+                if (hs.AdminUpdateStudent(maHS, ten, pass, khoa, ngaySinh, gioiTinh, sdt, trangthai))
+                {
+                    MessageBox.Show("Cập nhật thông tin học sinh thành công!");
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin học sinh không hợp lệ!");
+                }
             }
-            else if (gioiTinhStr == "Nữ")
+            catch
             {
-                gioiTinh = 0;
+                MessageBox.Show("Thông tin học sinh không hợp lệ!");
             }
-            else
-            {
-                MessageBox.Show("Giới tính không hợp lệ!");
-            }
-            string khoa = textBox6.Text;
-
-            string sdt = textBox7.Text;
-            string trangthai = textBox8.Text;
 
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -170,7 +182,129 @@ namespace BTLDotNet
 
         private void button7_Click_1(object sender, EventArgs e)
         {
+            textBox8.ReadOnly = false;
+            textBox8.Focus();
+        }
 
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string maHS = textBox1.Text;
+                string pass = textBox2.Text;
+                string ten = textBox3.Text;
+                string ngaySinh = textBox4.Text;
+                string gioiTinh = textBox5.Text;
+                string khoa = textBox6.Text;
+                string sdt = textBox7.Text;
+                string trangthai = textBox8.Text;
+                if (hs.CreateStudent(maHS, ten, pass, khoa, ngaySinh, gioiTinh, sdt, trangthai))
+                {
+                    MessageBox.Show("Thêm học sinh thành công!");
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin học sinh không hợp lệ!");
+                }
+            } catch
+            {
+                MessageBox.Show("Thông tin học sinh không hợp lệ!");
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            string maHS = textBox1.Text;
+            string pass = textBox2.Text;
+            string ten = textBox3.Text;
+            string ngaySinh = textBox4.Text;
+            string gioiTinh = textBox5.Text;
+            int khoa = -1;
+            if (textBox6.Text != "")
+            {
+                try
+                {
+                    khoa = int.Parse(textBox6.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Khóa không hợp lệ!");
+                    return;
+                }
+            }
+            string sdt = textBox7.Text;
+            string trangthai = textBox8.Text;
+            var students = hs.SearchStudent(maHS, ten, khoa, ngaySinh, khoa, sdt, trangthai);
+            MessageBox.Show("Kết quả tìm kiếm");
+            if(students == null)
+            {
+                return;
+            }
+            else
+            {
+                LoadListView(students);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string maHS = textBox1.Text;
+            if(hs.DeleteStudent(maHS))
+            {
+                MessageBox.Show("Xóa học sinh thành công!");
+            }
+            else
+            {
+                MessageBox.Show("Mã học sinh không tồn tại");
+            }
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+            textBox1.ReadOnly = false;
+            textBox1.Focus();
+        }
+
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+            textBox2.ReadOnly = false;
+            textBox2.Focus();
+        }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            textBox3.ReadOnly = false;
+            textBox3.Focus();
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            textBox4.ReadOnly = false;
+            textBox4.Focus();
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            textBox5.ReadOnly = false;
+            textBox5.Focus();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            textBox6.ReadOnly = false;
+            textBox6.Focus();
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            textBox7.ReadOnly = false;
+            textBox7.Focus();
         }
     }
 }
