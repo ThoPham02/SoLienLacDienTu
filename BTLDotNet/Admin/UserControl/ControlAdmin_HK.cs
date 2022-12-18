@@ -22,9 +22,14 @@ namespace BTLDotNet
 
         public void LoadData()
         {
-            listView1.Items.Clear();
             clearTextBox();
             var conducts = hk.GetConductList();
+            LoadListView(conducts);
+        }
+
+        public void LoadListView(List<Model.EF.hanh_kiem> conducts)
+        {
+            listView1.Items.Clear();
             foreach (var conduct in conducts)
             {
                 ListViewItem item = new ListViewItem();
@@ -81,13 +86,89 @@ namespace BTLDotNet
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string mahk = textBox1.Text;
-            string loai= textBox2.Text;
+            try
+            {
+                int mahk = int.Parse(textBox1.Text);
+                string loai = textBox2.Text;
+                if (hk.UpdateConduct(mahk, loai))
+                {
+                    MessageBox.Show("Cập nhật hạnh kiểm thành công!");
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin không hợp lệ!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Thông tin không hợp lệ!");
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int mahk = int.Parse(textBox1.Text);
+                string loai = textBox2.Text;
+                var conducts = hk.GetConductByCondition(mahk, loai);
+                MessageBox.Show("Kết quả tìm kiếm!");
+                if (conducts == null)
+                {
+                    return;
+                }
+                else
+                {
+                    LoadListView(conducts);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Thông tin không hợp lệ!");
+            }
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string loai = textBox2.Text;
+                if (hk.CreateConduct(loai))
+                {
+                    MessageBox.Show("Thêm hạnh kiểm thành công!");
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin không hợp lệ!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Thông tin không hợp lệ!");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int maHanhKiem = int.Parse(textBox1.Text);
+                if (hk.DeleteConduct(maHanhKiem))
+                {
+                    MessageBox.Show("Xóa hạnh kiểm thành công!");
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin không hợp lệ!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Thông tin không hợp lệ!");
+            }
         }
     }
 }

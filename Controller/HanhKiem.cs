@@ -23,12 +23,22 @@ namespace Controller
         {
             return dbContext.hanh_kiem.Single(b => b.ma_hanh_kiem.Equals(hanhkiem)).ma_hanh_kiem;
         }
-
-        public bool CreateConduct(Model.EF.hanh_kiem conduct)
+        public List<Model.EF.hanh_kiem> GetConductByCondition(int maHK, string loai)
         {
+            return dbContext.hanh_kiem
+                .Where(db => (maHK == 0 || db.ma_hanh_kiem == maHK) && (loai == "" || db.loai == loai))
+                .ToList();
+        }
+
+        public bool CreateConduct(string loai)
+        {
+            Model.EF.hanh_kiem hk = new Model.EF.hanh_kiem()
+            {
+                loai = loai,
+            };
             try
             {
-                dbContext.hanh_kiem.Add(conduct);
+                dbContext.hanh_kiem.Add(hk);
                 dbContext.SaveChanges();
                 return true;
             }
@@ -37,11 +47,12 @@ namespace Controller
                 return false;
             }
         }
-        public bool DeleteConduct(Model.EF.hanh_kiem conduct)
+        public bool DeleteConduct(int maHk)
         {
             try
             {
-                dbContext.hanh_kiem.Remove(conduct);
+                var hk = dbContext.hanh_kiem.Find(maHk);
+                dbContext.hanh_kiem.Remove(hk);
                 dbContext.SaveChanges();
                 return true;
             }
@@ -51,11 +62,16 @@ namespace Controller
             }
         }
 
-        public bool UpdateConduct(Model.EF.hanh_kiem conduct)
+        public bool UpdateConduct(int maHk, string loai)
         {
+            Model.EF.hanh_kiem hk = new Model.EF.hanh_kiem()
+            {
+                ma_hanh_kiem= maHk,
+                loai= loai,
+            };
             try
             {
-                dbContext.hanh_kiem.AddOrUpdate(conduct);
+                dbContext.hanh_kiem.AddOrUpdate(hk);
                 dbContext.SaveChanges();
                 return true;
             }
