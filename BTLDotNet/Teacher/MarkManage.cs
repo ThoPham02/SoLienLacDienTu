@@ -38,6 +38,7 @@ namespace BTLDotNet.Teacher
                 item.Text = student.ma_hs;
                 item.SubItems.Add(student.ten);
                 //item.SubItems.Add(student.)
+
                 listView1.Items.Add(item);
             };
 
