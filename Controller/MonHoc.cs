@@ -18,11 +18,21 @@ namespace Controller
         {
             return dbContext.mon_hoc.Single(b => b.ma_mon.Equals(maMonHoc));
         }
-        public bool CreateSubjects(Model.EF.mon_hoc subjects)
+        public List<Model.EF.mon_hoc> SearchSubject(int maMonHoc, string tenMon)
+        {
+            return dbContext.mon_hoc
+                .Where(db => (maMonHoc == -1 || db.ma_mon == maMonHoc) && (tenMon == "" || db.ten == tenMon))
+                .ToList();
+        }
+        public bool CreateSubjects(string tenMonHoc)
         {
             try
             {
-                dbContext.mon_hoc.Add(subjects);
+                var subject = new Model.EF.mon_hoc()
+                {
+                    ten = tenMonHoc
+                };
+                dbContext.mon_hoc.Add(subject);
                 dbContext.SaveChanges();
                 return true;
             }
@@ -31,11 +41,12 @@ namespace Controller
                 return false;
             }
         }
-        public bool DeleteSubjects(Model.EF.mon_hoc subjects)
+        public bool DeleteSubjects(int maMonHoc)
         {
             try
             {
-                dbContext.mon_hoc.Remove(subjects);
+                var subject = dbContext.mon_hoc.Find(maMonHoc);
+                dbContext.mon_hoc.Remove(subject);
                 dbContext.SaveChanges();
                 return true;
             }
@@ -45,11 +56,12 @@ namespace Controller
             }
         }
 
-        public bool UpdateSubjects(Model.EF.mon_hoc subjects)
+        public bool UpdateSubjects(int maMonHoc, string tenMonHoc)
         {
             try
             {
-                dbContext.mon_hoc.AddOrUpdate(subjects);
+                var subject = dbContext.mon_hoc.Find(maMonHoc);
+                subject.ten = tenMonHoc;
                 dbContext.SaveChanges();
                 return true;
             }
