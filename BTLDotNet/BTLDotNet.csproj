@@ -168,6 +168,12 @@
     <Compile Include="Student\StudentDashboard.Designer.cs">
       <DependentUpon>StudentDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teacher\ControlGV_TKB_MH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Teacher\ControlGV_TKB_MH.Designer.cs">
+      <DependentUpon>ControlGV_TKB_MH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teacher\MarkManage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,11 +270,17 @@
     <EmbeddedResource Include="Student\UserControl\ControlHS_Header.resx">
       <DependentUpon>ControlHS_Header.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\ControlGV_TKB_MH.resx">
+      <DependentUpon>ControlGV_TKB_MH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teacher\Info.resx">
       <DependentUpon>Info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\Report.resx">
       <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\Schedule.resx">
+      <DependentUpon>Schedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\StudentManage.resx">
       <DependentUpon>StudentManage.cs</DependentUpon>

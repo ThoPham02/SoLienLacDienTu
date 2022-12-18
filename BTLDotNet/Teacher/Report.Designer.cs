@@ -30,6 +30,10 @@ namespace BTLDotNet.Teacher
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.addSemester_cbox = new System.Windows.Forms.ComboBox();
+            this.addYear_cbox = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.hanhKiem_cbox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.comment_rtxt = new System.Windows.Forms.RichTextBox();
@@ -62,14 +66,24 @@ namespace BTLDotNet.Teacher
             this.semester_txt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.edit_btn = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.searchID_btn = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.searchID_txt = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.addSemester_cbox);
+            this.panel1.Controls.Add(this.addYear_cbox);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.hanhKiem_cbox);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.comment_rtxt);
@@ -78,6 +92,44 @@ namespace BTLDotNet.Teacher
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(718, 143);
             this.panel1.TabIndex = 1;
+            // 
+            // addSemester_cbox
+            // 
+            this.addSemester_cbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addSemester_cbox.FormattingEnabled = true;
+            this.addSemester_cbox.Location = new System.Drawing.Point(543, 61);
+            this.addSemester_cbox.Name = "addSemester_cbox";
+            this.addSemester_cbox.Size = new System.Drawing.Size(166, 24);
+            this.addSemester_cbox.TabIndex = 32;
+            // 
+            // addYear_cbox
+            // 
+            this.addYear_cbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addYear_cbox.FormattingEnabled = true;
+            this.addYear_cbox.Location = new System.Drawing.Point(543, 94);
+            this.addYear_cbox.Name = "addYear_cbox";
+            this.addYear_cbox.Size = new System.Drawing.Size(166, 24);
+            this.addYear_cbox.TabIndex = 31;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(442, 94);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 17);
+            this.label11.TabIndex = 30;
+            this.label11.Text = "Năm học:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(442, 61);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(62, 17);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "Học kỳ:";
             // 
             // hanhKiem_cbox
             // 
@@ -88,7 +140,7 @@ namespace BTLDotNet.Teacher
             "Khá",
             "Yếu",
             "Kém"});
-            this.hanhKiem_cbox.Location = new System.Drawing.Point(511, 26);
+            this.hanhKiem_cbox.Location = new System.Drawing.Point(543, 26);
             this.hanhKiem_cbox.Name = "hanhKiem_cbox";
             this.hanhKiem_cbox.Size = new System.Drawing.Size(166, 24);
             this.hanhKiem_cbox.TabIndex = 28;
@@ -97,7 +149,7 @@ namespace BTLDotNet.Teacher
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(548, 6);
+            this.label9.Location = new System.Drawing.Point(442, 28);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 17);
             this.label9.TabIndex = 19;
@@ -109,7 +161,7 @@ namespace BTLDotNet.Teacher
             this.comment_rtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comment_rtxt.Location = new System.Drawing.Point(17, 26);
             this.comment_rtxt.Name = "comment_rtxt";
-            this.comment_rtxt.Size = new System.Drawing.Size(453, 104);
+            this.comment_rtxt.Size = new System.Drawing.Size(415, 104);
             this.comment_rtxt.TabIndex = 2;
             this.comment_rtxt.Text = "";
             // 
@@ -255,7 +307,7 @@ namespace BTLDotNet.Teacher
             // search_txt
             // 
             this.search_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_txt.Location = new System.Drawing.Point(178, 102);
+            this.search_txt.Location = new System.Drawing.Point(103, 89);
             this.search_txt.Name = "search_txt";
             this.search_txt.Size = new System.Drawing.Size(166, 23);
             this.search_txt.TabIndex = 20;
@@ -273,19 +325,16 @@ namespace BTLDotNet.Teacher
             this.panel3.Controls.Add(this.search_txt);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(305, 57);
+            this.panel3.Location = new System.Drawing.Point(736, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(425, 232);
+            this.panel3.Size = new System.Drawing.Size(271, 149);
             this.panel3.TabIndex = 22;
             // 
             // semesterSearch_cbox
             // 
             this.semesterSearch_cbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.semesterSearch_cbox.FormattingEnabled = true;
-            this.semesterSearch_cbox.Items.AddRange(new object[] {
-            "1",
-            "2"});
-            this.semesterSearch_cbox.Location = new System.Drawing.Point(178, 39);
+            this.semesterSearch_cbox.Location = new System.Drawing.Point(103, 26);
             this.semesterSearch_cbox.Name = "semesterSearch_cbox";
             this.semesterSearch_cbox.Size = new System.Drawing.Size(166, 24);
             this.semesterSearch_cbox.TabIndex = 27;
@@ -294,12 +343,7 @@ namespace BTLDotNet.Teacher
             // 
             this.yearSearch_cbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.yearSearch_cbox.FormattingEnabled = true;
-            this.yearSearch_cbox.Items.AddRange(new object[] {
-            "2018-2019",
-            "2019-2020",
-            "2020-2021",
-            "2022-2023"});
-            this.yearSearch_cbox.Location = new System.Drawing.Point(178, 72);
+            this.yearSearch_cbox.Location = new System.Drawing.Point(103, 59);
             this.yearSearch_cbox.Name = "yearSearch_cbox";
             this.yearSearch_cbox.Size = new System.Drawing.Size(166, 24);
             this.yearSearch_cbox.TabIndex = 26;
@@ -308,7 +352,7 @@ namespace BTLDotNet.Teacher
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(175, -3);
+            this.label6.Location = new System.Drawing.Point(70, -3);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(135, 17);
             this.label6.TabIndex = 25;
@@ -318,7 +362,7 @@ namespace BTLDotNet.Teacher
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(77, 105);
+            this.label4.Location = new System.Drawing.Point(2, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 17);
             this.label4.TabIndex = 24;
@@ -328,11 +372,11 @@ namespace BTLDotNet.Teacher
             // 
             this.search_btn.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.search_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_btn.Location = new System.Drawing.Point(202, 131);
+            this.search_btn.Location = new System.Drawing.Point(127, 118);
             this.search_btn.Name = "search_btn";
-            this.search_btn.Size = new System.Drawing.Size(126, 45);
+            this.search_btn.Size = new System.Drawing.Size(126, 27);
             this.search_btn.TabIndex = 22;
-            this.search_btn.Text = "Tìm kiếm học sinh";
+            this.search_btn.Text = "Tìm kiếm";
             this.search_btn.UseVisualStyleBackColor = false;
             this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
             // 
@@ -340,7 +384,7 @@ namespace BTLDotNet.Teacher
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(77, 72);
+            this.label3.Location = new System.Drawing.Point(2, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 17);
             this.label3.TabIndex = 22;
@@ -350,7 +394,7 @@ namespace BTLDotNet.Teacher
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(77, 39);
+            this.label2.Location = new System.Drawing.Point(2, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 17);
             this.label2.TabIndex = 20;
@@ -431,13 +475,66 @@ namespace BTLDotNet.Teacher
             this.edit_btn.UseVisualStyleBackColor = false;
             this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label13);
+            this.panel5.Controls.Add(this.searchID_btn);
+            this.panel5.Controls.Add(this.label10);
+            this.panel5.Controls.Add(this.searchID_txt);
+            this.panel5.Location = new System.Drawing.Point(305, 57);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(425, 232);
+            this.panel5.TabIndex = 28;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(149, -3);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(138, 17);
+            this.label13.TabIndex = 28;
+            this.label13.Text = "Tìm kiếm học sinh";
+            // 
+            // searchID_btn
+            // 
+            this.searchID_btn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.searchID_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchID_btn.Location = new System.Drawing.Point(202, 62);
+            this.searchID_btn.Name = "searchID_btn";
+            this.searchID_btn.Size = new System.Drawing.Size(126, 27);
+            this.searchID_btn.TabIndex = 27;
+            this.searchID_btn.Text = "Tìm kiếm";
+            this.searchID_btn.UseVisualStyleBackColor = false;
+            this.searchID_btn.Click += new System.EventHandler(this.searchID_btn_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(77, 36);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 17);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Mã học sinh:";
+            // 
+            // searchID_txt
+            // 
+            this.searchID_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchID_txt.Location = new System.Drawing.Point(178, 33);
+            this.searchID_txt.Name = "searchID_txt";
+            this.searchID_txt.Size = new System.Drawing.Size(166, 23);
+            this.searchID_txt.TabIndex = 25;
+            this.searchID_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Report
             // 
             this.AcceptButton = this.search_btn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(742, 506);
+            this.ClientSize = new System.Drawing.Size(1168, 506);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.edit_btn);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.add_btn);
@@ -455,6 +552,8 @@ namespace BTLDotNet.Teacher
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -493,5 +592,14 @@ namespace BTLDotNet.Teacher
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox hanhKiem_cbox;
         private System.Windows.Forms.Button edit_btn;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button searchID_btn;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox searchID_txt;
+        private System.Windows.Forms.ComboBox addSemester_cbox;
+        private System.Windows.Forms.ComboBox addYear_cbox;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
