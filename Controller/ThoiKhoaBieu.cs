@@ -20,10 +20,19 @@ namespace Controller
                 .Where(db => db.ma_lop == maLop && db.ma_hoc_ki == maHocKi && db.ma_nam_hoc == maNamHoc)
                 .ToList();
         }
-        public bool CreateSchedule(Model.EF.thoi_khoa_bieu schedule)
+        public bool CreateSchedule(int maMh, string maGv, int maLop, int tiet, int maHocKi, int maNam)
         {
             try
             {
+                var schedule = new Model.EF.thoi_khoa_bieu()
+                {
+                    ma_mon = maMh,
+                    ma_gv = maGv,
+                    ma_lop = maLop,
+                    tiet = tiet,
+                    ma_hoc_ki = maHocKi,
+                    ma_nam_hoc = maNam
+                };
                 dbContext.thoi_khoa_bieu.Add(schedule);
                 dbContext.SaveChanges();
                 return true;
@@ -33,10 +42,11 @@ namespace Controller
                 return false;
             }
         }
-        public bool DeleteSchedule(Model.EF.thoi_khoa_bieu schedule)
+        public bool DeleteSchedule(int maMh, string maGv, int maLop, int tiet, int maHocKi, int maNam)
         {
             try
             {
+                var schedule = dbContext.thoi_khoa_bieu.First(db => db.ma_mon == maMh && db.ma_gv == maGv && db.ma_lop == maLop && db.ma_hoc_ki == maHocKi && db.ma_nam_hoc == maNam);
                 dbContext.thoi_khoa_bieu.Remove(schedule);
                 dbContext.SaveChanges();
                 return true;
@@ -47,18 +57,20 @@ namespace Controller
             }
         }
 
-        public bool UpdateSchedule(Model.EF.thoi_khoa_bieu schedule)
+        public bool UpdateSchedule(int maMh, string maGv, int maLop, int tiet, int maHocKi, int maNam)
         {
             try
             {
-                dbContext.thoi_khoa_bieu.AddOrUpdate(schedule);
+                var schedules = dbContext.thoi_khoa_bieu.First(db => db.ma_mon == maMh && db.ma_gv == maGv && db.ma_lop == maLop && db.ma_hoc_ki == maHocKi && db.ma_nam_hoc == maNam);
+                if(schedules == null ) { return false; }
+                schedules.tiet = tiet;
                 dbContext.SaveChanges();
-                return true;
             }
             catch (Exception)
             {
                 return false;
             }
+            return true;
         }
     }
 }

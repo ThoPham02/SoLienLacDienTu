@@ -74,6 +74,7 @@
             this.colNX,
             this.colMaHKi,
             this.colMaN});
+            this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(48, 24);
             this.listView1.Margin = new System.Windows.Forms.Padding(48, 24, 48, 24);
