@@ -5,6 +5,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Model;
 using Model.EF;
 
@@ -17,22 +18,32 @@ namespace Controller
         {
             return dbContext.bao_cao.ToList();
         }
-        public bool CreateReport(string ma_hs, string hanhkiem, string nhanXet, string hocKi, string namHoc)
+        public bool CreateReport(string ma_hs, int maHanhkiem, string nhanXet, int maHocKi, int maNamHoc)
         {
             try
             {
                 Model.EF.bao_cao bc = new Model.EF.bao_cao();
+                Model.EF.hoc_sinh hs = dbContext.hoc_sinh.Find(ma_hs);
                 HanhKiem hanhKiemCtrl = new HanhKiem();
                 HocKi hocKiCtrl = new HocKi();
                 NamHoc namHocCtrl = new NamHoc();
 
-                bc.ma_hs = ma_hs;
+                bc.ma_hs = hs.ma_hs;
                 bc.nhan_xet = nhanXet;
-                bc.ma_hanh_kiem = hanhKiemCtrl.GetConductID(hanhkiem);
-                bc.ma_hoc_ki = hocKiCtrl.GetSemesterID(hocKi);
-                bc.ma_nam = namHocCtrl.GetYearID(namHoc);
+                bc.ma_hanh_kiem = maHanhkiem;
+                bc.ma_nam = maNamHoc;
+                bc.ma_hoc_ki = maHocKi;
 
-                dbContext.SaveChanges();
+                dbContext.bao_cao.Add(bc);
+                try
+                {
+                      dbContext.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                
                 return true;
             }
             catch (Exception)
@@ -88,17 +99,11 @@ namespace Controller
             }
         }
 
-        public bool UpdateReport(int id, string maHs, int maHanhKiem, float diemTK, string nx, int maHocKi, int maNam)
+        public bool UpdateReport(Model.EF.bao_cao report)
         {
             try
             {
-                var report = dbContext.bao_cao.Find(id);
-                report.ma_hs = maHs;
-                report.ma_hanh_kiem = maHanhKiem;
-                report.diem_tong_ket = diemTK;
-                report.nhan_xet = nx;
-                report.ma_hoc_ki = maHocKi;
-                report.ma_nam = maNam;
+                dbContext.bao_cao.AddOrUpdate(report);
                 dbContext.SaveChanges();
                 return true;
             }
@@ -125,6 +130,25 @@ namespace Controller
                 baoCao = listBaoCao[0];
             }
             return baoCao;
+        }
+
+        public bool UpdateReportTeacher(string maHS, int maHocKi, int maNamHoc, int maHanhKiem, string nhanXet)
+        {
+            try
+            {
+                Model.EF.bao_cao bc = GetReportByStudentAndYear(maHS, maHocKi, maNamHoc);
+
+                bc.ma_hanh_kiem = maHanhKiem;
+                bc.nhan_xet = nhanXet;
+
+                dbContext.bao_cao.AddOrUpdate(bc);
+                dbContext.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }
