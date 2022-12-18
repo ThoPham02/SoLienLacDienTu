@@ -24,12 +24,22 @@ namespace Controller
         {
             return dbContext.hoc_ki.Single(b => b.ma_hoc_ki.Equals(maHK)).ten_hoc_ki;
         }
+        public List<Model.EF.hoc_ki> GetSemesterByCondition(int maHocKi, string tenHocKi)
+        {
+            return dbContext.hoc_ki
+                .Where(db => (maHocKi == 0 || db.ma_hoc_ki == maHocKi) && (tenHocKi == "" || db.ten_hoc_ki ==tenHocKi))
+                .ToList();
+        }
 
-        public bool CreateSemester(Model.EF.hoc_ki semester)
+        public bool CreateSemester(string tenHocKi)
         {
             try
             {
-                dbContext.hoc_ki.Add(semester);
+                Model.EF.hoc_ki hk = new Model.EF.hoc_ki()
+                {
+                    ten_hoc_ki = tenHocKi
+                };
+                dbContext.hoc_ki.Add(hk);
                 dbContext.SaveChanges();
                 return true;
             }
@@ -38,11 +48,12 @@ namespace Controller
                 return false;
             }
         }
-        public bool DeleteSemester(Model.EF.hoc_ki semester)
+        public bool DeleteSemester(int maHk)
         {
             try
             {
-                dbContext.hoc_ki.Remove(semester);
+                var hk = dbContext.hoc_ki.Find(maHk);
+                dbContext.hoc_ki.Remove(hk);
                 dbContext.SaveChanges();
                 return true;
             }
@@ -52,11 +63,12 @@ namespace Controller
             }
         }
 
-        public bool UpdateSemester(Model.EF.hoc_ki semester)
+        public bool UpdateSemester(int maHocKi, string tenHocKi)
         {
             try
             {
-                dbContext.hoc_ki.AddOrUpdate(semester);
+                var hk = dbContext.hoc_ki.Find(maHocKi);
+                hk.ten_hoc_ki = tenHocKi;
                 dbContext.SaveChanges();
                 return true;
             }

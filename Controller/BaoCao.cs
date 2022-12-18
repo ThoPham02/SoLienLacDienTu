@@ -5,8 +5,8 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using Model;
+using Model.EF;
 
 namespace Controller
 {
@@ -17,32 +17,22 @@ namespace Controller
         {
             return dbContext.bao_cao.ToList();
         }
-        public bool CreateReport(string ma_hs, int maHanhkiem, string nhanXet, int maHocKi, int maNamHoc)
+        public bool CreateReport(string ma_hs, string hanhkiem, string nhanXet, string hocKi, string namHoc)
         {
             try
             {
                 Model.EF.bao_cao bc = new Model.EF.bao_cao();
-                Model.EF.hoc_sinh hs = dbContext.hoc_sinh.Find(ma_hs);
                 HanhKiem hanhKiemCtrl = new HanhKiem();
                 HocKi hocKiCtrl = new HocKi();
                 NamHoc namHocCtrl = new NamHoc();
 
-                bc.ma_hs = hs.ma_hs;
+                bc.ma_hs = ma_hs;
                 bc.nhan_xet = nhanXet;
-                bc.ma_hanh_kiem = maHanhkiem;
-                bc.ma_nam = maNamHoc;
-                bc.ma_hoc_ki = maHocKi;
+                bc.ma_hanh_kiem = hanhKiemCtrl.GetConductID(hanhkiem);
+                bc.ma_hoc_ki = hocKiCtrl.GetSemesterID(hocKi);
+                bc.ma_nam = namHocCtrl.GetYearID(namHoc);
 
-                dbContext.bao_cao.Add(bc);
-                try
-                {
-                      dbContext.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-                
+                dbContext.SaveChanges();
                 return true;
             }
             catch (Exception)
@@ -50,10 +40,44 @@ namespace Controller
                 return false;
             }
         }
-        public bool DeleteReport(Model.EF.bao_cao report)
+
+        public bool AdminCreateReport(string maHs, int maHanhKiem, string nx, int maHocKi, int maNam)
         {
             try
             {
+                Model.EF.bao_cao bc = new Model.EF.bao_cao();
+                bc.ma_hs = maHs;
+                bc.nhan_xet = nx;
+                bc.ma_hanh_kiem = maHanhKiem;
+                bc.ma_hoc_ki = maHocKi;
+                bc.ma_nam = maNam;
+                dbContext.bao_cao.Add(bc);
+                dbContext.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public List<Model.EF.bao_cao> GetReportByCondition(int id, string maHs,float diemTk, int maHanhKiem, string nx, int maHocKi, int maNam)
+        {
+            return dbContext.bao_cao
+                .Where(db =>
+                    (id == 0 || db.id == id)
+                    &&(maHs == "" || db.ma_hs == maHs)
+                    &&(diemTk == -1 || db.diem_tong_ket == diemTk)
+                    &&(maHanhKiem == 0 || db.ma_hanh_kiem == maHanhKiem)
+                    &&(nx == "" || db.nhan_xet == nx)
+                    &&(maHocKi == 0 || db.ma_hoc_ki == maHocKi)
+                    &&(maNam == 0 || db.ma_nam == maNam))
+                .ToList();
+        }
+        public bool DeleteReport(int id)
+        {
+            try
+            {
+                var report = dbContext.bao_cao.Find(id);
                 dbContext.bao_cao.Remove(report);
                 dbContext.SaveChanges();
                 return true;
@@ -64,16 +88,17 @@ namespace Controller
             }
         }
 
-        public bool UpdateReport(string maHS, int maHocKi, int maNamHoc, int maHanhKiem, string nhanXet)
+        public bool UpdateReport(int id, string maHs, int maHanhKiem, float diemTK, string nx, int maHocKi, int maNam)
         {
             try
             {
-                Model.EF.bao_cao bc = GetReportByStudentAndYear(maHS, maHocKi, maNamHoc);
-
-                bc.ma_hanh_kiem = maHanhKiem;
-                bc.nhan_xet = nhanXet;
-
-                dbContext.bao_cao.AddOrUpdate(bc);
+                var report = dbContext.bao_cao.Find(id);
+                report.ma_hs = maHs;
+                report.ma_hanh_kiem = maHanhKiem;
+                report.diem_tong_ket = diemTK;
+                report.nhan_xet = nx;
+                report.ma_hoc_ki = maHocKi;
+                report.ma_nam = maNam;
                 dbContext.SaveChanges();
                 return true;
             }
@@ -100,25 +125,6 @@ namespace Controller
                 baoCao = listBaoCao[0];
             }
             return baoCao;
-        }
-
-        public bool UpdateReportTeacher(string maHS, int maHocKi, int maNamHoc, int maHanhKiem, string nhanXet)
-        {
-            try
-            {
-                Model.EF.bao_cao bc = GetReportByStudentAndYear(maHS, maHocKi, maNamHoc);
-
-                bc.ma_hanh_kiem = maHanhKiem;
-                bc.nhan_xet = nhanXet;
-
-                dbContext.bao_cao.AddOrUpdate(bc);
-                dbContext.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
         }
     }
 }

@@ -15,22 +15,27 @@ namespace BTLDotNet
     public partial class ControlAdmin_D : UserControl
     {
         Controller.DiemKT d = new Controller.DiemKT();
+
         public ControlAdmin_D()
         {
             InitializeComponent();
-            LoadData();
+            loadData();
         }
 
-        public void LoadData()
+        public void loadData()
+        {
+            var points = d.GetScoreList();
+            clearTextBox();
+            LoadListView(points);
+        }
+
+        public void LoadListView(List<Model.EF.diem_kt> points)
         {
             listView1.Items.Clear();
-            clearTextBox();
-            var points = d.GetScoreList();
             foreach (var point in points)
             {
                 ListViewItem item = new ListViewItem();
                 item.Text = point.ma_hs.ToString();
-                item.SubItems.Add(point.ma_hs);
                 item.SubItems.Add(point.diem.ToString());
                 item.SubItems.Add(point.loai.ToString());
                 item.SubItems.Add(point.ma_mon.ToString());
@@ -82,17 +87,33 @@ namespace BTLDotNet
 
         private void button3_Click(object sender, EventArgs e)
         {
-            LoadData();
+            loadData();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string mahs = textBox1.Text;
-            string diemm = textBox2.Text;
-            string loai = textBox3.Text;
-            string mamon = textBox4.Text;
-            string mahk = textBox5.Text;
-            string manam = textBox6.Text;
+            try
+            {
+                string mahs = textBox1.Text;
+                float diem = float.Parse(textBox2.Text);
+                byte loai = byte.Parse(textBox3.Text);
+                byte mamon = byte.Parse(textBox4.Text);
+                byte mahk = byte.Parse(textBox5.Text);
+                byte manam = byte.Parse(textBox6.Text);
+                if (d.UpdateScore(mahs, diem, loai, mamon, mahk, manam))
+                {
+                    MessageBox.Show("Cập nhật điểm thành công!");
+                    loadData();
+                }
+                else
+                {
+                    MessageBox.Show("Dữ liệu điểm không hợp lệ!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Dữ liệu điểm không hợp lệ!");
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -123,6 +144,94 @@ namespace BTLDotNet
         private void button10_Click(object sender, EventArgs e)
         {
             textBox6.ReadOnly = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string mahs = textBox1.Text;
+                byte loai = byte.Parse(textBox3.Text);
+                byte mamon = byte.Parse(textBox4.Text);
+                byte mahk = byte.Parse(textBox5.Text);
+                byte manam = byte.Parse(textBox6.Text);
+                if (d.DeleteScore(mahs, loai, mamon, mahk, manam))
+                {
+                    MessageBox.Show("Xóa điểm thành công!");
+                    loadData();
+                }
+                else
+                {
+                    MessageBox.Show("Dữ liệu điểm không hợp lệ!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Dữ liệu điểm không hợp lệ!");
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string mahs = textBox1.Text;
+                int loai = -1, mamon = -1, mahk = -1, manam = -1;
+                if (textBox3.Text != "")
+                {
+                    loai = int.Parse(textBox3.Text);
+                }
+
+                if (textBox4.Text != "")
+                {
+                    mamon = int.Parse(textBox4.Text);
+                }
+
+                if (textBox5.Text != "")
+                {
+                    mahk = int.Parse(textBox5.Text);
+                }
+                if (textBox6.Text != "")
+                {
+                    manam = int.Parse(textBox6.Text);
+                }
+                var scores = d.SearchScore(mahs, loai, mamon, mahk, manam);
+                MessageBox.Show("Kết quả tìm kiếm!");
+                if (scores != null)
+                {
+                    LoadListView(scores);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Thông tin điểm không hợp lệ!");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string mahs = textBox1.Text;
+                float diem = float.Parse(textBox2.Text);
+                byte loai = byte.Parse(textBox3.Text);
+                byte mamon = byte.Parse(textBox4.Text);
+                byte mahk = byte.Parse(textBox5.Text);
+                byte manam = byte.Parse(textBox6.Text);
+                if (d.CreateScore(mahs, diem, loai, mamon, mahk, manam))
+                {
+                    MessageBox.Show("Thêm điểm thành công!");
+                    loadData();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin điểm không hợp lệ!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Thông tin điểm không hợp lệ!");
+            }
         }
     }
 }

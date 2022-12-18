@@ -82,32 +82,32 @@
             // colMaHS
             // 
             this.colMaHS.Text = "Mã học sinh";
-            this.colMaHS.Width = 150;
+            this.colMaHS.Width = 70;
             // 
             // colDiem
             // 
             this.colDiem.Text = "Điểm";
-            this.colDiem.Width = 150;
+            this.colDiem.Width = 70;
             // 
             // colLoai
             // 
             this.colLoai.Text = "Loại";
-            this.colLoai.Width = 150;
+            this.colLoai.Width = 70;
             // 
             // colMaMon
             // 
             this.colMaMon.Text = "Mã Môn";
-            this.colMaMon.Width = 150;
+            this.colMaMon.Width = 70;
             // 
             // colMaHK
             // 
             this.colMaHK.Text = "Mã Học Kì";
-            this.colMaHK.Width = 150;
+            this.colMaHK.Width = 70;
             // 
             // colMaNam
             // 
             this.colMaNam.Text = "Mã Năm";
-            this.colMaNam.Width = 150;
+            this.colMaNam.Width = 70;
             // 
             // label1
             // 
@@ -226,6 +226,7 @@
             this.button1.TabIndex = 13;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -236,6 +237,7 @@
             this.button2.TabIndex = 14;
             this.button2.Text = "Xóa";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -334,6 +336,7 @@
             this.button11.TabIndex = 23;
             this.button11.Text = "Tìm kiếm";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // ControlAdmin_D
             // 

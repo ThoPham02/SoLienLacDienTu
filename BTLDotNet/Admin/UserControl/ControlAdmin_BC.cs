@@ -21,9 +21,14 @@ namespace BTLDotNet
 
         public void LoadData()
         {
-            listView1.Items.Clear();
             clearTextBox();
             var reports = bc.GetReportList();
+            LoadListView(reports);
+        }
+
+        public void LoadListView(List<Model.EF.bao_cao> reports)
+        {
+            listView1.Items.Clear();
             foreach (var report in reports)
             {
                 ListViewItem item = new ListViewItem();
@@ -38,7 +43,6 @@ namespace BTLDotNet
             };
             listView1.FullRowSelect = true;
             listView1.MultiSelect = false;
-
         }
 
         public void clearTextBox()
@@ -47,14 +51,14 @@ namespace BTLDotNet
             textBox2.Text = "";
             textBox3.Text = "";
             textBox4.Text = "";
-            textBox5.Text = "";
+            richTextBox1.Text = "";
             textBox6.Text = "";
             textBox7.Text = "";
             textBox1.ReadOnly = true;
             textBox2.ReadOnly = true;
             textBox3.ReadOnly = true;
             textBox4.ReadOnly = true;
-            textBox5.ReadOnly = true;
+            richTextBox1.ReadOnly = true;
             textBox6.ReadOnly = true;
             textBox7.ReadOnly = true;
         }
@@ -65,7 +69,41 @@ namespace BTLDotNet
 
         private void button11_Click(object sender, EventArgs e)
         {
-            
+            int id = 0, maHanhKiem = 0, maHocKi = 0, maNam = 0;
+            float diemTk = -1;
+            if (textBox1.Text != "")
+            {
+                id = int.Parse(textBox1.Text);
+            }
+            string mahs = textBox2.Text;
+            if (textBox3.Text != "")
+            {
+                maHanhKiem = int.Parse(textBox3.Text);
+            }
+            if (textBox4.Text != "")
+            {
+                diemTk = float.Parse(textBox4.Text);
+            }
+            string nx = richTextBox1.Text;
+            if (textBox6.Text != "")
+            {
+                maHocKi = int.Parse(textBox6.Text);
+
+            }
+            if (textBox7.Text != "")
+            {
+                maNam = int.Parse(textBox7.Text);
+            }
+            var reports = bc.GetReportByCondition(id, mahs, diemTk, maHanhKiem, nx, maHocKi, maNam);
+            MessageBox.Show("Kết quả tìm kiếm!");
+            if(reports == null)
+            {
+                return;
+            }
+            else
+            {
+                LoadListView(reports);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -95,7 +133,7 @@ namespace BTLDotNet
 
         private void button8_Click(object sender, EventArgs e)
         {
-            textBox5.ReadOnly = false;
+            richTextBox1.ReadOnly = false;
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -121,31 +159,84 @@ namespace BTLDotNet
                 textBox2.Text = report[0].SubItems[1].Text;
                 textBox3.Text = report[0].SubItems[2].Text;
                 textBox4.Text = report[0].SubItems[3].Text;
-                textBox5.Text = report[0].SubItems[4].Text;
+                richTextBox1.Text = report[0].SubItems[4].Text;
                 textBox6.Text = report[0].SubItems[5].Text;
-                textBox7.Text = report[0].SubItems[5].Text;
+                textBox7.Text = report[0].SubItems[6].Text;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                string mahs = textBox2.Text;
+                int maHanhKiem = int.Parse(textBox3.Text);
+                string nx = richTextBox1.Text;
+                int maHocKi = int.Parse(textBox6.Text);
+                int manam = int.Parse(textBox7.Text);
+                if (bc.AdminCreateReport(mahs, maHanhKiem, nx, maHocKi, manam))
+                {
+                    MessageBox.Show("Thêm Báo cáo thành công!");
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin báo cáo không hợp lệ!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Thông tin báo cáo không hợp lệ!");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                int id = int.Parse(textBox1.Text);
+                if (bc.DeleteReport(id))
+                {
+                    MessageBox.Show("Xóa báo cáo thành công!");
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin báo cáo không hợp lệ!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Thông tin báo cáo không hợp lệ!");
+            }
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            string id = textBox1.Text;
-            string mahs = textBox2.Text;
-            string mahk = textBox3.Text;
-            string diemtk = textBox4.Text;
-            string nx = textBox5.Text;
-            string mahki = textBox6.Text;
-            string manam = textBox7.Text;
+            try
+            {
+                int id = int.Parse(textBox1.Text);
+                string mahs = textBox2.Text;
+                int maHanhKiem = int.Parse(textBox3.Text);
+                float diemtk = float.Parse(textBox4.Text);
+                string nx = richTextBox1.Text;
+                int maHocKi = int.Parse(textBox6.Text);
+                int manam = int.Parse(textBox7.Text);
+                if (bc.UpdateReport(id, mahs, maHanhKiem, diemtk, nx, maHocKi, manam))
+                {
+                    MessageBox.Show("Cập nhật báo cáo thành công!");
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin báo cáo không hợp lệ!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Thông tin báo cáo không hợp lệ!");
+            }
+
         }
     }
 }

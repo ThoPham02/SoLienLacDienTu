@@ -13,7 +13,7 @@ namespace BTLDotNet
 {
     public partial class ControlAdmin_HocKi : UserControl
     {
-        Controller.HocKi hki = new Controller.HocKi();
+        Controller.HocKi hocKi = new Controller.HocKi();
         public ControlAdmin_HocKi()
         {
             InitializeComponent();
@@ -22,9 +22,14 @@ namespace BTLDotNet
 
         public void LoadData()
         {
-            listView1.Items.Clear();
             clearTextBox();
-            var semesters = hki.GetSemesterList();
+            var semesters = hocKi.GetSemesterList();
+            LoadListView(semesters);
+        }
+
+        public void LoadListView(List<Model.EF.hoc_ki> semesters)
+        {
+            listView1.Items.Clear();
             foreach (var semester in semesters)
             {
                 ListViewItem item = new ListViewItem();
@@ -46,7 +51,24 @@ namespace BTLDotNet
 
         private void button4_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int mahk = int.Parse(textBox1.Text);
+                if(hocKi.DeleteSemester(mahk))
+                {
+                    MessageBox.Show("Xóa Học Kì Thành Công!");
+                    LoadData();
+                }
 
+                else
+                {
+                    MessageBox.Show("Thông tin không hợp lệ!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Thông tin không hợp lệ!");
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -71,8 +93,25 @@ namespace BTLDotNet
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string mahk = textBox1.Text;
-            string hk = textBox2.Text;
+            try
+            {
+                int maHocKi = int.Parse(textBox1.Text);
+                string tenHocKi = textBox2.Text;
+                var semesters = hocKi.GetSemesterByCondition(maHocKi, tenHocKi);
+                MessageBox.Show("Kết quả tìm kiếm!");
+                if (semesters == null)
+                {
+                    return;
+                }
+                else
+                {
+                    LoadListView(semesters);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Thông tin không hợp lệ!");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -92,8 +131,46 @@ namespace BTLDotNet
 
         private void button7_Click(object sender, EventArgs e)
         {
-            string mahk = textBox1.Text;
-            string hk = textBox2.Text;
+            try
+            {
+                int mahk = int.Parse(textBox1.Text);
+                string loai = textBox2.Text;
+                if (hocKi.UpdateSemester(mahk, loai))
+                {
+                    MessageBox.Show("Cập nhật học kì thành công!");
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin không hợp lệ!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Thông tin không hợp lệ!");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string loai = textBox2.Text;
+                
+                if (hocKi.CreateSemester(loai))
+                {
+                    MessageBox.Show("Thêm học kì thành công!");
+
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin không hợp lệ!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Thông tin không hợp lệ!");
+            }
         }
     }
 }
