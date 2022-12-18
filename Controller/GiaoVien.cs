@@ -161,5 +161,28 @@ namespace Controller
             }
         }
 
+        public void InsertMarkByTeacher(string maGV, string maHS, int maHocKy, int maNamHoc, int loaiDiem, float diem)
+        {
+            int maMon = (int)dbContext.thoi_khoa_bieu.Single(c => c.ma_gv.Equals(maGV)).ma_mon;
+            Model.EF.diem_kt diemkt = new Model.EF.diem_kt();
+
+            diemkt.ma_mon = maMon;
+            diemkt.ma_hs = maHS;
+            diemkt.ma_hoc_ki = maHocKy;
+            diemkt.ma_nam = maNamHoc;
+            diemkt.loai = loaiDiem;
+            diemkt.diem = diem;
+
+            dbContext.diem_kt.Add(diemkt);
+            dbContext.SaveChanges();
+        }
+
+        //public List GetStudentMarkList()
+        //{
+        //    var list = from c in dbContext.diem_kt
+        //               join d in dbContext.hoc_sinh
+
+        //    return list;
+        //}
     }
 }
