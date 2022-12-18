@@ -109,7 +109,7 @@
             this.buttonStudent.Name = "buttonStudent";
             this.buttonStudent.Size = new System.Drawing.Size(154, 46);
             this.buttonStudent.TabIndex = 3;
-            this.buttonStudent.Text = "Quản lý học sinh";
+            this.buttonStudent.Text = "Xem lớp";
             this.buttonStudent.UseVisualStyleBackColor = true;
             this.buttonStudent.Click += new System.EventHandler(this.student_btn_Click);
             // 

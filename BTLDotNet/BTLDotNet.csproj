@@ -276,6 +276,9 @@
     <EmbeddedResource Include="Teacher\Info.resx">
       <DependentUpon>Info.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\MarkManage.resx">
+      <DependentUpon>MarkManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teacher\Report.resx">
       <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
